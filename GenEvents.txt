@@ -1,0 +1,5031 @@
+
+@BEGINEVENTS
+;@DEBUG
+@INITFLAG
+
+;GENERAL
+
+@IF
+NoSchism
+defender=Anybody
+@ENDIF
+
+@IF
+Negotiation
+talker=anybody
+talkertype=humanorcomputer
+listener=anybody
+listenertype=humanorcomputer
+
+@IF
+TURN
+turn=1
+@THEN
+TEXT
+Frodo celebrates his (and Bilbo's) birthday.   
+ENDTEXT
+CREATEUNIT
+unit=Frodo and Sam
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+58,48
+endlocations
+PLAYWAVEFILE
+BEGIN.WAV
+@ENDIF
+
+@IF
+TURN
+turn=1
+@THEN
+CREATEUNIT
+unit=The Ring
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+58,48
+endlocations
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Mordor
+whom=Gondor
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Mordor
+whom=Elves
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Mordor
+whom=Free People
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Swarthy men
+whom=Free People
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Chaos
+whom=Free People
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Swarthy men
+whom=Gondor
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MAKEAGGRESSION
+who=Chaos
+whom=Gondor
+@ENDIF
+
+@IF
+CityProduction
+builder=anybody
+improvement=13
+@THEN
+TEXT
+Conflict arises among free nations.
+ENDTEXT
+MAKEAGGRESSION
+who=Gondor
+whom=Elves
+@ENDIF
+
+@IF
+CityProduction
+builder=anybody
+improvement=38
+@THEN
+MAKEAGGRESSION
+who=Gondor
+whom=Free People
+@ENDIF
+
+@IF
+CityProduction
+builder=anybody
+improvement=38
+@THEN
+MAKEAGGRESSION
+who=Elves
+whom=Free People
+@ENDIF
+
+@IF
+TURN
+turn=-1
+@THEN
+MOVEUNIT
+unit=Frodo and Sam
+owner=Free People
+maprect
+56,46,60,46,60,50,56,50
+moveto
+81,47
+numbertomove=1
+@ENDIF
+
+@IF
+TURN
+turn=2
+@THEN
+TEXT
+Aragorn comes to Bree.  
+ENDTEXT
+CREATEUNIT
+unit=Aragorn
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+67,51
+69,53
+70,48
+81,47
+endlocations
+@ENDIF
+
+@IF
+TURN
+turn=3
+@THEN
+TEXT
+Strange black riders have been seen near The Shire. 
+ENDTEXT
+CREATEUNIT
+unit=Nazgul
+count=8
+owner=Mordor
+veteran=yes
+homecity=Barad-dur
+randomize
+locations
+60,46
+71,47
+76,46
+79,53
+73,59
+101,53
+97,71
+endlocations
+@ENDIF
+
+@IF
+TURN
+turn=6
+@THEN
+TEXT
+Gandalf arrives to Rivendell.  
+ENDTEXT
+CREATEUNIT
+unit=Gandalf the Grey
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+81,47
+74,48
+81,53
+73,59
+endlocations
+@ENDIF
+
+@IF
+TURN
+turn=9
+@THEN
+TEXT
+Elrond's council decides to form a Fellowship for bringing The Ring to Mount Doom and destroying it there.  
+ENDTEXT
+CREATEUNIT
+unit=Gimli
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+81,47
+82,44
+80,52
+92,40
+endlocations
+@ENDIF
+
+@IF
+TURN
+turn=9
+@THEN
+CREATEUNIT
+unit=Legolas
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+81,47
+79,45
+79,53
+98,36
+endlocations
+@ENDIF
+
+@IF
+TURN
+turn=9
+@THEN
+CREATEUNIT
+unit=Boromir
+owner=Free People
+veteran=yes
+homecity=NONE
+locations
+81,47
+78,54
+77,63
+82,104
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+delay
+delay=1
+TEXT
+Eowyn can finally prove herself in a battle. 
+ENDTEXT
+CREATEUNIT
+unit=Eowyn
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+82,104
+88,112
+95,119
+78,112
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+delay
+delay=2
+TEXT
+A new (old) horror rides out from Minas Morgul. 
+ENDTEXT
+CREATEUNIT
+unit=Witch King
+owner=Mordor
+veteran=yes
+homecity=Barad-dur
+locations
+102,118
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+;FREE PEOPLE AND THE RING
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Free People
+state=on
+TEXT
+Free People got The Ring back!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Free People
+state=on
+TEXT
+Free People got The Ring back!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Free People
+state=on
+TEXT
+Free People got The Ring back!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Free People
+state=on
+TEXT
+Free People got The Ring back!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Free People
+state=on
+TEXT
+The Great dragon Ancalagon II has been killed!
+^
+Free People got The Ring back!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Free People
+flag=6
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Free People
+state=on
+CREATEUNIT
+unit=The Ring
+owner=Free People
+veteran=yes
+homecity=none
+locations
+81,47
+58,48
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Free People
+flag=6
+state=on
+@THEN
+CREATEUNIT
+unit=Ringbearer
+owner=Free People
+veteran=yes
+homecity=none
+locations
+81,47
+58,48
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Free People
+flag=6
+state=on
+@THEN
+FLAG
+continuous
+flag=6
+Who=Free People
+state=off
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=2
+state=on
+@THEN
+GIVETECHNOLOGY
+receiver=Free People
+technology=46
+CHANGEMONEY
+receiver=Free People
+amount=6000
+MAKEAGGRESSION
+who=Isengard
+whom=Mordor
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=2
+state=on
+@THEN
+GIVETECHNOLOGY
+receiver=Free People
+technology=66
+MAKEAGGRESSION
+who=Swarthy men
+whom=Mordor
+JUSTONCE
+@ENDIF
+
+;MORDOR AND THE RING
+
+@IF
+UNITKILLED
+unit=Frodo and Sam
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=1
+Who=Mordor
+state=on
+TEXT
+Frodo the Ringbearer is killed!  How will the
+Ring be thrown into Mt. Doom without him?
+The One Ring is recovered by agents of Mordor
+and whisked back to Barad-dur! Sauron grows all
+powerful.  
+ENDTEXT
+CREATEUNIT
+unit=Witch King
+owner=Mordor
+veteran=yes
+homecity=Barad-dur
+locations
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ringbearer
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=1
+Who=Mordor
+state=on
+TEXT
+The One Ring is recovered by agents of Darkness! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=1
+Who=Mordor
+state=on
+TEXT
+Mordor got The Ring back!
+The One Ring is recovered by agents of Darkness! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=1
+Who=Mordor
+state=on
+TEXT
+Mordor got The Ring back!
+The One Ring is recovered by agents of Darkness! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=1
+Who=Mordor
+state=on
+TEXT
+Mordor got The Ring back!
+The One Ring is recovered by agents of Darkness! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=1
+Who=Mordor
+state=on
+TEXT
+The Great dragon Ancalagon II has been killed!
+^
+Mordor got The Ring back!
+The One Ring is recovered by agents of Darkness! 
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=1
+state=on
+@THEN
+delay
+delay=3
+TEXT
+The Ruling Ring has been delivered to Sauron. 
+A host of new evil beasts flow out from
+the Dark Land. 
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=1
+state=on
+@THEN
+delay
+delay=6
+GIVETECHNOLOGY
+receiver=Mordor
+technology=82
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=1
+state=on
+@THEN
+delay
+delay=8
+GIVETECHNOLOGY
+receiver=Mordor
+technology=86
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=1
+state=on
+@THEN
+delay
+delay=12
+FLAG
+flag=11
+Who=Mordor
+state=on
+GIVETECHNOLOGY
+receiver=Mordor
+technology=90
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=0
+state=on
+@THEN
+FLAG
+continuous
+flag=10
+Who=Mordor
+state=on
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=1
+state=on
+@THEN
+delay
+delay=10
+CREATEUNIT
+unit=Nazgul
+count=8
+owner=Mordor
+veteran=yes
+homecity=Barad-dur
+Randomize
+locations
+112,110
+102,118
+105,99
+97,71
+70,30
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=11
+state=on
+@AND
+CHECKFLAG
+Who=Mordor
+flag=0
+state=off
+@THEN
+FLAG
+continuous
+flag=0
+Who=Mordor
+state=on
+TEXT
+Sauron has taken physical body!
+ENDTEXT
+CREATEUNIT
+unit=Sauron
+owner=Mordor
+veteran=yes
+homecity=Barad-dur
+locations
+112,110
+119,89
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=0
+state=off
+@AND
+CHECKFLAG
+Who=Mordor
+flag=9
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Mordor
+state=on
+TEXT
+Sauron has finally taken physical body.
+ENDTEXT
+CREATEUNIT
+unit=Sauron
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+112,110
+endlocations
+JUSTONCE
+MAKEAGGRESSION
+who=Mordor
+whom=Swarthy men
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Barad-dur
+attacker=anybody
+defender=Mordor
+@THEN
+FLAG
+continuous
+flag=2
+Who=Mordor
+state=on
+TEXT
+Sauron is defeated and Barad-dur crumbles to the ground!  
+Evil creatures everywhere run for their lives in confusion 
+and hopelessness. The tide has turned!
+^
+^The once and future true King of Gondor is revealed!  The White Tree can
+grow again!
+ENDTEXT
+CREATEUNIT
+unit=Eagles
+owner=Free People
+veteran=yes
+homecity=none
+locations
+108,112
+109,113
+endlocations
+JUSTONCE
+GIVETECHNOLOGY
+receiver=Mordor
+technology=99
+PLAYWAVEFILE
+MOOTDOOM.WAV
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Barad-dur
+attacker=anybody
+defender=Mordor
+@THEN
+delay
+delay=10
+TEXT
+A White Ship is ready!
+ENDTEXT
+CREATEUNIT
+unit=White Ship
+owner=Free People
+veteran=yes
+homecity=none
+locations
+47,49
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Barad-dur
+attacker=anybody
+defender=Mordor
+@THEN
+delay
+delay=10
+CREATEUNIT
+unit=White Ship
+owner=Gondor
+veteran=yes
+homecity=none
+locations
+48,46
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Barad-dur
+attacker=anybody
+defender=Mordor
+@THEN
+delay
+delay=10
+CREATEUNIT
+unit=White Ship
+owner=Elves
+veteran=yes
+homecity=none
+locations
+44,48
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=0
+state=on
+@THEN
+MAKEAGGRESSION
+who=Mordor
+whom=Isengard
+@ENDIF
+
+@IF
+RECEIVEDTECHNOLOGY
+technology=99
+receiver=Mordor
+@THEN
+CHANGEMONEY
+receiver=Mordor
+amount=-1000
+@ENDIF
+
+;CHAOS AND THE RING
+
+@IF
+UNITKILLED
+unit=Frodo and Sam
+attacker=Chaos
+defender=anybody
+@THEN
+TEXT
+Frodo the Ringbearer is killed!  How will the
+Ring be thrown into Mt. Doom without him?
+The One Ring is recovered by agents of Darkness! 
+A host of new evil beasts flow out from
+North and Great Dragon Ancalagon II appears.
+ENDTEXT
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=on
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ringbearer
+attacker=Chaos
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=on
+TEXT
+The Chaos Forces got The Ring! Ancalagon II appears! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=Chaos
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=on
+TEXT
+The Chaos Forces got The Ring! Ancalagon II appears! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Chaos
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=on
+TEXT
+The Chaos Forces got The Ring! Ancalagon II appears! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=Chaos
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=on
+TEXT
+The Chaos Forces got The Ring! Ancalagon II appears! 
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=Chaos
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=on
+TEXT
+The Chaos Forces got The Ring! Ancalagon II appears! 
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Chaos
+flag=4
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Chaos
+state=on
+CREATEUNIT
+unit=Ancalagon II
+owner=Chaos
+veteran=yes
+homecity=NONE
+locations
+84,22
+84,18
+92,8
+endlocations
+CHANGEMONEY
+receiver=Chaos
+amount=4000
+GIVETECHNOLOGY
+receiver=Chaos
+technology=90
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Chaos
+flag=4
+state=on
+@THEN
+FLAG
+continuous
+flag=4
+Who=Chaos
+state=off
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=0
+state=on
+@THEN
+CHANGEMONEY
+receiver=Chaos
+amount=300
+MAKEAGGRESSION
+who=Mordor
+whom=Swarthy men
+@ENDIF
+
+;ELVES AND THE RING
+
+@IF
+UNITKILLED
+unit=Frodo and Sam
+attacker=Elves
+defender=anybody
+@THEN
+TEXT
+Frodo the Ringbearer is killed!  How will the
+Ring be thrown into Mt. Doom without him?
+Galadriel has taken The One Ring.
+Beware of the new Dark Queen!
+ENDTEXT
+FLAG
+continuous
+flag=9
+Who=Elves
+state=on
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ringbearer
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Elves
+state=on
+TEXT
+Galadriel has taken The One Ring.
+Beware of the new Dark Queen!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Elves
+state=on
+TEXT
+Galadriel has taken The One Ring.
+Beware of the new Dark Queen!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Elves
+state=on
+TEXT
+Galadriel has taken The One Ring.
+Beware of the new Dark Queen!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Elves
+state=on
+TEXT
+Galadriel has taken The One Ring.
+Beware of the new Dark Queen!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Elves
+state=on
+TEXT
+The Great dragon Ancalagon II has been killed!
+^
+Galadriel has taken The One Ring.
+Beware of the new Dark Queen!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Elves
+flag=9
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Elves
+state=on
+CREATEUNIT
+unit=Dark Queen
+owner=Elves
+veteran=yes
+homecity=NONE
+locations
+86,74
+48,44
+99,45
+endlocations
+GIVETECHNOLOGY
+receiver=Elves
+technology=65
+MAKEAGGRESSION
+who=Elves
+whom=Gondor
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Elves
+flag=9
+state=on
+@THEN
+FLAG
+continuous
+flag=9
+Who=Elves
+state=off
+MAKEAGGRESSION
+who=Elves
+whom=Free People
+@ENDIF
+
+;SWARTHY MEN AND THE RING
+
+@IF
+UNITKILLED
+unit=Frodo and Sam
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+Frodo the Ringbearer is killed!  How will the
+Ring be thrown into Mt. Doom without him?
+The One Ring has fallen into the hands of Sauron's allies.
+Are they going to give it back to Sauron?
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=8000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ringbearer
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+The One Ring has fallen into the hands of Sauron's allies.
+Are they going to give it back to Sauron?
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=6000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+Swarthy men got The Ring! A new Dark King appears.
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=5000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+Swarthy men got The Ring! A new Dark King appears.
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=4000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+Swarthy men got The Ring! A new Dark King appears.
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=5000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+Swarthy men got The Ring! A new Dark King appears.
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=7000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=Swarthy men
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=on
+TEXT
+The Great dragon Ancalagon II has been killed!
+^
+Swarthy men got The Ring! A new Dark King appears.
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=5000
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Swarthy men
+flag=5
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Swarthy men
+state=on
+CREATEUNIT
+unit=King
+owner=Swarthy men
+veteran=yes
+homecity=NONE
+locations
+121,77
+88,172
+118,82
+endlocations
+GIVETECHNOLOGY
+receiver=Swarthy men
+technology=58
+MAKEAGGRESSION
+who=Swarthy men
+whom=Mordor
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Swarthy men
+flag=5
+state=on
+@THEN
+FLAG
+continuous
+flag=5
+Who=Swarthy men
+state=off
+MAKEAGGRESSION
+who=Swarthy men
+whom=Isengard
+@ENDIF
+
+;GONDOR AND THE RING
+
+@IF
+UNITKILLED
+unit=Frodo and Sam
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+TEXT
+Frodo the Ringbearer is killed!  How will the
+Ring be thrown into Mt. Doom without him?
+Denethor has taken The Ring.
+He declares himself The King of Gondor!
+ENDTEXT
+CHANGEMONEY
+receiver=Gondor
+amount=-2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ringbearer
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+CHANGEMONEY
+receiver=Gondor
+amount=-2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+CHANGEMONEY
+receiver=Gondor
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+CHANGEMONEY
+receiver=Gondor
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+CHANGEMONEY
+receiver=Gondor
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+CHANGEMONEY
+receiver=Gondor
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=on
+TEXT
+The Great dragon Ancalagon II has been killed!
+ENDTEXT
+CHANGEMONEY
+receiver=Gondor
+amount=2000
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=6
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Gondor
+state=on
+TEXT
+Gondor got The Ring!
+ENDTEXT
+CREATEUNIT
+unit=King
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+95,119
+80,130
+82,104
+72,118
+endlocations
+GIVETECHNOLOGY
+receiver=Gondor
+technology=66
+MAKEAGGRESSION
+who=Gondor
+whom=Free People
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=6
+state=on
+@THEN
+FLAG
+continuous
+flag=6
+Who=Gondor
+state=off
+MAKEAGGRESSION
+who=Gondor
+whom=Elves
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=2
+state=on
+@AND
+CHECKFLAG
+Who=Gondor
+flag=0
+state=off
+@THEN
+TEXT
+The last sapling of the White Tree is found.
+ENDTEXT
+BestowImprovement
+improvement=67
+race=Gondor
+capital=yes
+wonders=yes
+JUSTONCE
+GIVETECHNOLOGY
+receiver=Gondor
+technology=66
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=2
+state=on
+@AND
+CHECKFLAG
+Who=Gondor
+flag=0
+state=off
+@THEN
+GIVETECHNOLOGY
+receiver=Gondor
+technology=46
+CHANGEMONEY
+receiver=Gondor
+amount=6000
+JUSTONCE
+@ENDIF
+
+;SARUMAN AND THE RING
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Frodo and Sam
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=on
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Ringbearer
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=on
+TEXT
+Saruman got The Ring!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=King
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=on
+TEXT
+Saruman got The Ring!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Dark Queen
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=on
+TEXT
+Saruman got The Ring!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Sauron
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=on
+TEXT
+Saruman got The Ring!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Ancalagon II
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=on
+TEXT
+The Great dragon Ancalagon II has been killed!
+^
+Saruman got The Ring!
+ENDTEXT
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=5
+state=on
+@THEN
+FLAG
+continuous
+flag=0
+Who=Isengard
+state=on
+CREATEUNIT
+unit=Curunir
+owner=Isengard
+veteran=yes
+homecity=none
+locations
+76,92
+65,83
+endlocations
+GIVETECHNOLOGY
+receiver=Isengard
+technology=90
+MAKEAGGRESSION
+who=Isengard
+whom=Mordor
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=5
+state=on
+@THEN
+CREATEUNIT
+unit=Witch King
+owner=Isengard
+veteran=yes
+homecity=none
+locations
+76,92
+endlocations
+CHANGEMONEY
+receiver=Mordor
+amount=4000
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=5
+state=on
+@THEN
+FLAG
+continuous
+flag=5
+Who=Isengard
+state=off
+GIVETECHNOLOGY
+receiver=Isengard
+technology=77
+MAKEAGGRESSION
+who=Swarthy men
+whom=Isengard
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Frodo and Sam
+attacker=anybody
+defender=Free People
+@THEN
+FLAG
+continuous
+flag=7
+Who=Free People
+state=on
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ringbearer
+attacker=anybody
+defender=Free People
+@THEN
+FLAG
+continuous
+flag=0
+Who=Free People
+state=off
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=anybody
+defender=Isengard
+@THEN
+FLAG
+continuous
+flag=0
+Who=Isengard
+state=off
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Curunir
+attacker=anybody
+defender=Isengard
+@THEN
+TakeTechnology
+whom=Isengard
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=anybody
+defender=Mordor
+@THEN
+TakeTechnology
+whom=Mordor
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=anybody
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=0
+Who=TriggerDefender
+state=off
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=anybody
+defender=anybody
+@THEN
+TakeTechnology
+whom=TriggerDefender
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=anybody
+defender=Elves
+@THEN
+FLAG
+continuous
+flag=0
+Who=Elves
+state=off
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dark Queen
+attacker=anybody
+defender=Elves
+@THEN
+TakeTechnology
+whom=Elves
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=anybody
+defender=Mordor
+@THEN
+FLAG
+continuous
+flag=0
+Who=Mordor
+state=off
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=anybody
+defender=Mordor
+@THEN
+TakeTechnology
+whom=Mordor
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=anybody
+defender=Chaos
+@THEN
+FLAG
+continuous
+flag=0
+Who=Chaos
+state=off
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=15
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Ancalagon II
+attacker=anybody
+defender=Chaos
+@THEN
+TakeTechnology
+whom=Chaos
+technology=15
+@ENDIF
+
+; CITYTAKEN
+
+@IF
+CITYTAKEN
+city=Moria
+attacker=anybody
+defender=Mordor
+@THEN
+TEXT
+The Fellowship entered to the mines of Moria.
+A Balrog comes out from the darkness!
+ENDTEXT
+CREATEUNIT
+unit=Balrog
+owner=Mordor
+veteran=yes
+homecity=none
+locations
+82,74,1
+81,73,1
+83,73,1
+80,76,1
+endlocations
+GIVETECHNOLOGY
+receiver=TriggerAttacker
+technology=31
+CHANGEMONEY
+receiver=TriggerAttacker
+amount=3000
+JUSTONCE
+PLAYWAVEFILE
+BALROG.WAV
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Lorien
+attacker=anybody
+defender=Elves
+@THEN
+FLAG
+continuous
+flag=10
+Who=Mordor
+state=on
+TEXT
+Lorien has been conquered by the Enemy!
+ENDTEXT
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Lorien
+attacker=anybody
+defender=Elves
+@THEN
+FLAG
+continuous
+flag=6
+Who=Elves
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Lorien
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=6
+Who=Elves
+state=off
+TEXT
+The Golden Wood is liberated!
+ENDTEXT
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Gundabad
+attacker=Chaos
+defender=anybody
+@THEN
+TEXT
+Former Morgoth servants have taken Gundabad!
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+CityDestroyed
+city=Osgiliath
+owner=anybody
+@THEN
+TEXT
+The former capital city of Gondor, Osgiliath, is finally destroyed and abandoned.
+ENDTEXT
+CREATEUNIT
+unit=Olog-Hai
+count=3
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+102,118
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Minas Morgul
+attacker=anybody
+defender=Mordor
+@THEN
+TEXT
+Minas Morgul has fallen! How could that happen? Sauron becomes suspicious and mobilizes his  forces in Mordor.
+ENDTEXT
+CREATEUNIT
+unit=Nazgul (2)
+count=2
+owner=Mordor
+veteran=no
+homecity=Barad-dur
+locations
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Lorien
+attacker=anybody
+defender=Elves
+@THEN
+TEXT
+The ents in Fangorn forest decide to help the Elves.
+ENDTEXT
+CREATEUNIT
+unit=Ents
+count=2
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+84,80
+85,81
+83,81
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=White Hills
+attacker=anybody
+defender=Elves
+@THEN
+TEXT
+The Elves in the eastern lands are cut off from the ships! Cirdan decides to mobilize the forces in Forlindon.
+ENDTEXT
+CREATEUNIT
+unit=Rangers
+count=4
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+48,44
+49,41
+50,42
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Grey Havens
+attacker=anybody
+defender=Elves
+@THEN
+TEXT
+The great elven port is conquered. The elven ships depart to the western seas.
+ENDTEXT
+CREATEUNIT
+unit=Galley
+count=6
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+48,46
+47,47
+46,48
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Grey Havens
+attacker=anybody
+defender=Elves
+@THEN
+FLAG
+continuous
+flag=8
+Who=Elves
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Grey Havens
+attacker=Elves
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=8
+Who=Elves
+state=off
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Isengard
+attacker=anybody
+defender=Isengard
+@THEN
+TEXT
+Saruman sends his prayer for help into the Aman. Some foolish folks decide to go east and help him.
+ENDTEXT
+CREATEUNIT
+unit=Forces of Aman
+owner=Isengard
+veteran=no
+homecity=NONE
+Randomize
+locations
+66,98
+64,94
+62,90
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Ethring
+attacker=Mordor
+defender=anybody
+@THEN
+TEXT
+Sauron decides to remove Saruman from the scene.
+ENDTEXT
+MAKEAGGRESSION
+who=Isengard
+whom=Mordor
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Lefnui
+attacker=anybody
+defender=anybody
+@THEN
+TEXT
+Gondorian war refugees are fleeing north in hope to find safety there. 
+ENDTEXT
+CREATEUNIT
+unit=Settlers
+count=3
+owner=Gondor
+veteran=yes
+homecity=NONE
+Randomize
+locations
+58,86
+57,81
+59,75
+endlocations
+MAKEAGGRESSION
+who=Mordor
+whom=Swarthy men
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Minas Tirith
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The White City has fallen! The toughest of it's defenders flee in desperation into the mountains.
+ENDTEXT
+CREATEUNIT
+unit=Rangers
+count=4
+owner=Gondor
+veteran=yes
+homecity=NONE
+Randomize
+locations
+93,117
+94,120
+92,122
+91,121
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Minas Tirith
+attacker=anybody
+defender=Gondor
+@THEN
+FLAG
+continuous
+flag=3
+Who=Gondor
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Minas Tirith
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=3
+Who=Gondor
+state=off
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Dol Amroth
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The rumours of the fall of the Boromir seem to be false. At least someone who says he is Boromir has been seen in the western lands of Gondor.
+ENDTEXT
+CREATEUNIT
+unit=Boromir
+owner=Gondor
+veteran=no
+homecity=NONE
+Randomize
+locations
+74,120
+72,122
+68,122
+65,125
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Edoras
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The Rohirrim flee south, seeking refuge from the lands of Gondor.
+ENDTEXT
+CREATEUNIT
+unit=Rohirrim
+count=8
+owner=Gondor
+veteran=yes
+homecity=NONE
+Randomize
+locations
+78,108
+79,111
+78,112
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Edoras
+attacker=anybody
+defender=Gondor
+@THEN
+FLAG
+continuous
+flag=5
+Who=Gondor
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Edoras
+attacker=Gondor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Gondor
+state=off
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Rivendell
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+The safe haven for the high elves has been conquered. Those who can, flee from the fallen valley.
+ENDTEXT
+CREATEUNIT
+unit=High Elves
+count=4
+owner=Free People
+veteran=yes
+homecity=NONE
+Randomize
+locations
+53,45
+54,42
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Rivendell
+attacker=anybody
+defender=Free People
+@THEN
+FLAG
+continuous
+flag=2
+Who=Free People
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Rivendell
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=2
+Who=Free People
+state=off
+TEXT
+The Rivendell valley is liberated!
+ENDTEXT
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Hobbiton
+attacker=anybody
+defender=Free People
+@THEN
+FLAG
+continuous
+flag=5
+Who=Free People
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Hobbiton
+attacker=Free People
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=5
+Who=Free People
+state=off
+TEXT
+Hobbiton is liberated!
+ENDTEXT
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Dale
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=6
+TEXT
+The dwarves have lost the Lonely Mountain. In the deep halls they have plotted a dreadful revenge. Behold the mighty Grond!
+ENDTEXT
+CREATEUNIT
+unit=The Grond
+owner=Free People
+veteran=no
+homecity=NONE
+Randomize
+locations
+112,34
+48,54
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Fangorn
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=4
+TEXT
+The brave ents in the Fangorn forest have perished. The rumours of this sad event reach to the entwives, who decide to join the war.
+ENDTEXT
+CREATEUNIT
+unit=Ents
+count=5
+owner=Free People
+veteran=yes
+homecity=NONE
+Randomize
+locations
+133,65
+134,68
+134,66
+132,66
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Hobbiton
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=5
+TEXT
+The exploited and tortured hobbits suffer the occupation no more! 
+ENDTEXT
+CREATEUNIT
+unit=Hobbits
+count=12
+owner=Free People
+veteran=no
+homecity=NONE
+Randomize
+locations
+57,53
+55,47
+58,46
+61,47
+64,52
+62,54
+56,50
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Umbar
+attacker=anybody
+defender=Swarthy men
+@THEN
+TEXT
+The great haven of Umbar has fallen! The unspoken perils in it's vicinity have been disturbed. Beware!
+ENDTEXT
+CREATEUNIT
+unit=Great Spider
+count=3
+owner=Swarthy men
+veteran=yes
+homecity=NONE
+Randomize
+locations
+84,172
+82,172
+86,168
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Rhun
+attacker=anybody
+defender=Swarthy men
+@THEN
+TEXT
+The battle sounds have waken the great evil from past. 
+ENDTEXT
+CREATEUNIT
+unit=Balrog
+count=2
+owner=Swarthy men
+veteran=no
+homecity=NONE
+Randomize
+locations
+120,84,1
+119,87,1
+118,86,1
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Gundabad
+attacker=anybody
+defender=Chaos
+@THEN
+TEXT
+The forces of Chaos are defeated - but they have not said their last word yet. Beware, for the madness and illusions may be more real and deadly than reality.
+ENDTEXT
+CREATEUNIT
+unit=Witch King
+owner=Chaos
+veteran=yes
+homecity=NONE
+Randomize
+locations
+92,16
+75,9
+108,16
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Gundabad
+attacker=anybody
+defender=Chaos
+@THEN
+CREATEUNIT
+unit=Aragorn
+owner=Chaos
+veteran=yes
+homecity=NONE
+Randomize
+locations
+104,10
+91,3
+73,5
+endlocations
+JUSTONCE
+@ENDIF
+
+; QUESTS
+
+@IF
+UNITKILLED
+unit=Elf Pikemen
+attacker=anybody
+defender=Elves
+@THEN
+delay
+delay=1
+TEXT
+^^-=QUEST OF SARUMAN=-
+^
+The rumors say that the Elven king in the Thranduil knows the location of the Vilya Ring.
+^
+********
+^
+Saruman needs to get one of the Rings of Powers to complete his ringlore. He must conquer Thranduil.
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Thranduil
+attacker=Isengard
+defender=anybody
+@THEN
+TEXT
+^^-=QUEST OF SARUMAN=-
+^
+Saruman learns that Elrond has the Vilya Ring!
+Now would he surrender it to the former Head of White Council voluntarily?
+^
+********
+^
+If Saruman wants to get the Vilya Ring then he has to kill Elrond The Lord of Imladris.
+ENDTEXT
+FLAG
+continuous
+flag=3
+Who=Isengard
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=3
+state=on
+@AND
+UNITKILLED
+unit=Elrond
+attacker=Isengard
+defender=Free People
+@THEN
+TEXT
+^^-=QUEST OF SARUMAN=-
+^
+Saruman got the Vilya Ring!
+^
+********
+^
+Only in Minas Morgul Saruman can find the last missing links of Ringlore. 
+Capture Minas Morgul.
+ENDTEXT
+FLAG
+continuous
+flag=4
+Who=Isengard
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=4
+state=on
+@AND
+CITYTAKEN
+city=Minas Morgul
+attacker=Isengard
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=0
+Who=Isengard
+state=on
+TEXT
+^^-=QUEST OF SARUMAN=-
+^
+Saruman has now enough knowledge for making his own Ring of Power!
+ENDTEXT
+CREATEUNIT
+unit=Nazgul
+count=2
+owner=Mordor
+veteran=no
+homecity=Barad-dur
+locations
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=4
+state=on
+@AND
+CITYTAKEN
+city=Minas Morgul
+attacker=Isengard
+defender=anybody
+@THEN
+delay
+delay=10
+FLAG
+continuous
+flag=9
+Who=Mordor
+state=on
+TEXT
+^^-=QUEST OF SARUMAN=-
+^
+Saruman has completed his Ring of Power!
+ENDTEXT
+CREATEUNIT
+unit=Curunir
+owner=Isengard
+veteran=no
+homecity=Isengard
+locations
+76,92
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Easterlings
+attacker=anybody
+defender=Swarthy men
+@THEN
+delay
+delay=1
+TEXT
+^^-=QUEST OF ELVES=-
+^
+The war is becoming more and more widespread. The Elves want to protect Lorien Forest. 
+^
+********
+^
+The closest enemy stronghold is the Mines of Moria. It must be cleaned from Sauron's servants.
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Balrog
+attacker=Elves
+defender=Mordor
+@THEN
+TEXT
+^^-=QUEST OF ELVES=-
+^
+Elves learnt that there are even deeper and older caves under the Mines of Moria where are roaming unnamed creatures. In order to get more knowledge about how to liberate the Three Rings from The One, Elves must descend into these ancient tunnels and learn the secrets hidden there.
+^
+********
+^
+Find and kill a creature of Nameless Horror.
+ENDTEXT
+FLAG
+continuous
+flag=1
+Who=Elves
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Elves
+flag=1
+state=on
+@AND
+UNITKILLED
+unit=Nameless Horror
+attacker=Elves
+defender=Chaos
+@THEN
+TEXT
+^^-=QUEST OF ELVES=-
+^
+From a cave comes a glitter - it is a lost Silmaril from the Heart of the Arda!
+Only Saruman, who has long studied the lores of Aule, has the knowledge how to use the Silmaril and its power.
+^
+********
+^
+The Tower of Orthanc must be captured!  
+ENDTEXT
+FLAG
+continuous
+flag=2
+Who=Elves
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Elves
+flag=2
+state=on
+@AND
+CITYTAKEN
+city=Isengard
+attacker=Elves
+defender=anybody
+@THEN
+delay
+delay=2
+TEXT
+^^-=QUEST OF ELVES=-
+^
+From Orthanc Tower the Elves have found the hidden manuscripts of Saruman.
+The Elves can now use the power of Three Rings to full extent. 
+ENDTEXT
+CREATEUNIT
+unit=High Elves
+count=30
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+48,44
+86,74
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Isengard
+attacker=Elves
+defender=anybody
+@THEN
+delay
+delay=5
+FLAG
+continuous
+flag=9
+Who=Mordor
+state=on
+TEXT
+Galadriel and Cirdan decided to send the Silmaril into Aman. Hopefully the ships will not come back empty. 
+ENDTEXT
+CREATEUNIT
+unit=White Ship
+count=3
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+48,46
+47,47
+46,48
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Trolls
+attacker=anybody
+defender=Mordor
+@THEN
+delay
+delay=1
+TEXT
+^^-=QUEST OF CHAOS AND SWARTHY MEN=-
+^
+The stubborn refusal of an arrogant dwarf king called Dain II to accept the "generous" proposal of Sauron has brought war on his people. 
+^
+********
+^
+The generous bounty for the head of Dain that Mordor offers has get the Easterlings and northern dragons to move. Dain II must be killed!
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dain II
+attacker=Swarthy men
+defender=Free People
+@THEN
+TEXT
+^^-=QUEST OF SWARTHY MEN=-
+^
+Easterlings killed the dwarwen king Dain II and returned with the treasures of Iron Hills!
+The most cunning and ruthless of Umbar corsairs who have ventured to far off the coast reported seeing strange monster. 
+^
+********
+^
+Kill the monster!  
+ENDTEXT
+FLAG
+continuous
+flag=1
+Who=Swarthy men
+state=on
+CREATEUNIT
+unit=Watcher
+owner=Chaos
+veteran=yes
+homecity=NONE
+locations
+18,80
+endlocations
+CHANGEMONEY
+receiver=Swarthy men
+amount=4000
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Swarthy men
+flag=1
+state=on
+@AND
+UNITKILLED
+unit=Watcher
+attacker=Swarthy men
+defender=Chaos
+@THEN
+TEXT
+^^-=QUEST OF SWARTHY MEN=-
+^
+From the stomach of the dead monster were found several ancient valuables which it had swallowed. From one golden plate the corsairs learned that two swords made by Feanor were taken into Carn Dum. 
+Those fell swords would really be a good help.
+^
+********
+^
+Carn Dum must be conquered! 
+ENDTEXT
+FLAG
+continuous
+flag=2
+Who=Swarthy men
+state=on
+CHANGEMONEY
+receiver=Swarthy men
+amount=4000
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Swarthy men
+flag=2
+state=on
+@AND
+CITYTAKEN
+city=Carn Dum
+attacker=Swarthy men
+defender=anybody
+@THEN
+TEXT
+^^-=QUEST OF SWARTHY MEN=-
+^
+The swords are there! Now who would be powerful enough to use them?
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Carn Dum
+attacker=Swarthy men
+defender=anybody
+@THEN
+delay
+delay=6
+TEXT
+Pallando the Blue Wizard has taken the sword and rises to the throne of Harad.
+ENDTEXT
+CREATEUNIT
+unit=Wizard
+owner=Swarthy men
+veteran=no
+homecity=NONE
+locations
+96,160
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Carn Dum
+attacker=Swarthy men
+defender=anybody
+@THEN
+delay
+delay=7
+FLAG
+continuous
+flag=9
+Who=Mordor
+state=on
+TEXT
+Atastir the Blue Wizard has taken the sword and rises to the throne of Rhun.
+ENDTEXT
+CREATEUNIT
+unit=Wizard
+owner=Swarthy men
+veteran=no
+homecity=NONE
+locations
+124,84
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Uruk Orcs
+attacker=anybody
+defender=Mordor
+@THEN
+TEXT
+^^-=QUEST OF GONDOR=-
+^
+The people of Fuinur have decided to send three legions of Haradrim to help the Sauron in his warfare. The Steward of Gondor, Denethor II, has seen it from his secretly held Palantir of Minas Tirith.
+^
+********
+^
+Enraged Denethor has ordered that Fuinur must be destroyed.
+^
+Wipe the city of Fuinur out from the surface of Earth.
+ENDTEXT
+CREATEUNIT
+unit=Haradrim
+count=3
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+112,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CityDestroyed
+city=Fuinur
+owner=anybody
+@THEN
+TEXT
+^^-=QUEST OF GONDOR=-
+^
+Gondor warriors hear rumors that in the last days of Arnor Kingdom the secret of Entwives was uncovered. Maybe from the ruins of Fornost more information can be found?
+^
+********
+^
+Capture Fornost.
+ENDTEXT
+FLAG
+continuous
+flag=1
+Who=Gondor
+state=on
+GIVETECHNOLOGY
+receiver=Gondor
+technology=31
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=1
+state=on
+@AND
+CITYTAKEN
+city=Fornost
+attacker=Gondor
+defender=anybody
+@THEN
+TEXT
+^^-=QUEST OF GONDOR=-
+^
+All that could be uncovered from the remnants of once great Arnor libraries is that the secret of the vanished Entwives was known to Pallando in Uldor, one of the Blue Wizards. 
+^
+********
+^
+Find Pallando and make him talk! (He is a Wizard allied with Swarthy Men)
+ENDTEXT
+CREATEUNIT
+unit=Wizard
+owner=Swarthy men
+veteran=yes
+homecity=NONE
+locations
+121,77
+endlocations
+FLAG
+continuous
+flag=2
+Who=Gondor
+state=on
+CHANGEMONEY
+receiver=Gondor
+amount=5000
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=2
+state=on
+@AND
+UNITKILLED
+unit=Wizard
+attacker=Gondor
+defender=Swarthy men
+@THEN
+TEXT
+^^-=QUEST OF GONDOR=-
+^
+The Entwives are found! The Ents in Fangorn forest are going to have an Entmoot. 
+ENDTEXT
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=2
+state=on
+@AND
+UNITKILLED
+unit=Wizard
+attacker=Gondor
+defender=Swarthy men
+@THEN
+delay
+delay=5
+FLAG
+continuous
+flag=9
+Who=Mordor
+state=on
+TEXT
+Being thankful to Gondorian lords, the ents decide to help them against their enemies.
+ENDTEXT
+CREATEUNIT
+unit=Ents
+count=30
+owner=Gondor
+veteran=yes
+homecity=NONE
+Randomize
+locations
+82,104
+88,112
+77,101
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dain II
+attacker=Chaos
+defender=Free People
+@THEN
+TEXT
+^^-=QUEST OF CHAOS=-
+^
+Servants of Darkness learn about the Shire and the Barrow-downs nearby. 
+^
+********
+^
+Capture the village of Bree.  
+ENDTEXT
+FLAG
+continuous
+flag=2
+Who=Chaos
+state=on
+CHANGEMONEY
+receiver=Chaos
+amount=7000
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Chaos
+flag=2
+state=on
+@AND
+CITYTAKEN
+city=Bree
+attacker=Chaos
+defender=anybody
+@THEN
+TEXT
+^^-=QUEST OF CHAOS=-
+^
+The spirits from Barrow Downs join with the Chaos armies.
+The old texts from Cardolan talk about a wise wizard who wanted to stop the Witch King of Angmar and created the curse of Barrow Downs. 
+It is said that he headed to Khand in far South. 
+^
+********
+^
+Expand your rule over the City of Khand.
+ENDTEXT
+CREATEUNIT
+unit=The Undead
+count=20
+owner=Chaos
+veteran=yes
+homecity=NONE
+Randomize
+locations
+66,56
+65,55
+67,53
+69,53
+67,51
+endlocations
+FLAG
+continuous
+flag=3
+Who=Chaos
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Chaos
+flag=3
+state=on
+@AND
+CITYTAKEN
+city=Khand
+attacker=Chaos
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Mordor
+state=on
+TEXT
+^^-=QUEST OF CHAOS=-
+^
+The Blue Wizard Atastir joins with Chaos forces. 
+ENDTEXT
+CREATEUNIT
+unit=Wizard
+owner=Chaos
+veteran=yes
+homecity=NONE
+locations
+128,146
+endlocations
+JUSTONCE
+@ENDIF
+
+; HEROES
+
+@IF
+UNITKILLED
+unit=Eomer
+attacker=anybody
+defender=Gondor
+@THEN
+delay
+delay=4
+TEXT
+Eomer was healed from his wounds and arrived from Rohan to help defend
+Gondor!
+ENDTEXT
+CREATEUNIT
+unit=Eomer
+owner=Gondor
+veteran=no
+homecity=none
+locations
+95,119
+86,122
+75,115
+74,120
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Eowyn
+attacker=anybody
+defender=Gondor
+@THEN
+delay
+delay=4
+TEXT
+Eowyn was healed from her wounds and rode to Gondor.
+ENDTEXT
+CREATEUNIT
+unit=Eowyn
+owner=Gondor
+veteran=no
+homecity=none
+locations
+95,119
+88,112
+74,124
+72,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Witch King
+attacker=Anybody
+defender=Mordor
+@THEN
+TEXT
+The Witch King, Black Captain of the Nazgul, has been
+injured and returns to his Master.
+ENDTEXT
+CREATEUNIT
+unit=Witch King
+owner=Mordor
+veteran=no
+homecity=Barad-dur
+locations
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Nazgul
+attacker=Anybody
+defender=Mordor
+@THEN
+delay
+delay=3
+TEXT
+A defeated Nazgul reached to Barad-dur.
+ENDTEXT
+CREATEUNIT
+unit=Nazgul (2)
+owner=Mordor
+veteran=no
+homecity=Barad-dur
+locations
+112,110
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Nazgul
+attacker=Anybody
+defender=Mordor
+@THEN
+FLAG
+continuous
+flag=5
+Who=Mordor
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=5
+state=on
+@AND
+UNITKILLED
+unit=Nazgul
+attacker=Anybody
+defender=Mordor
+@THEN
+FLAG
+continuous
+flag=6
+Who=Mordor
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@AND
+UNITKILLED
+unit=Nazgul
+attacker=Anybody
+defender=Mordor
+@THEN
+FLAG
+continuous
+flag=7
+Who=Mordor
+state=on
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Nazgul (2)
+attacker=anybody
+defender=anybody
+@THEN
+TEXT
+Another Nazgul has been banished into
+the void, never to be seen again.
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Hobbits
+attacker=anybody
+defender=Free People
+@THEN
+CHANGEMONEY
+receiver=Free People
+amount=-200
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Aragorn
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=4
+TEXT
+Aragorn comes to Gondor to fight there against Sauron! 
+ENDTEXT
+CREATEUNIT
+unit=Aragorn
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+82,104
+77,101
+95,119
+80,130
+65,117
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Aragorn
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=6
+TEXT
+The Dead Men of Dunharrow live and ride again
+to finally fulfill their oath!
+ENDTEXT
+CREATEUNIT
+unit=The Undead
+count=6
+owner=Gondor
+veteran=yes
+homecity=none
+locations
+79,111
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=0
+state=on
+@AND
+UNITKILLED
+unit=Aragorn
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=3
+TEXT
+Aragorn is healed from his wounds. 
+ENDTEXT
+CREATEUNIT
+unit=Aragorn
+owner=Free People
+veteran=yes
+homecity=NONE
+Randomize
+locations
+81,47
+69,61
+52,60
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Aragorn
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+Aragorn, rightful king of Gondor, has
+died before he could claim his throne.
+Some evil Dunedains decide to join with Mordor.
+ENDTEXT
+CREATEUNIT
+unit=Dunedain
+count=8
+owner=Mordor
+veteran=yes
+homecity=none
+locations
+100,132
+110,132
+112,110
+endlocations
+CHANGEMONEY
+receiver=Gondor
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Great Gate
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The Great Gate of Minas Tirith is destroyed! 
+ENDTEXT
+CREATEUNIT
+unit=Eored
+count=6
+owner=Gondor
+veteran=yes
+homecity=none
+Randomize
+locations
+96,116
+95,117
+95,119
+95,115
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The King of Gondor has fallen!
+ENDTEXT
+CHANGEMONEY
+receiver=Gondor
+amount=-2000
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Gandalf the Grey
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+Wise wizard Gandalf is killed!  Or is he?
+ENDTEXT
+CREATEUNIT
+unit=Gandalf the White
+owner=Gondor
+veteran=yes
+homecity=none
+locations
+86,88
+82,104
+95,119
+83,133
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=0
+state=on
+@AND
+UNITKILLED
+unit=Gandalf the Grey
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+Wise wizard Gandalf is killed!  Or is he?
+ENDTEXT
+CREATEUNIT
+unit=Gandalf the White
+owner=Free People
+veteran=yes
+homecity=none
+Randomize
+locations
+81,47
+59,53
+53,61
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gandalf the White
+attacker=anybody
+defender=anybody
+@THEN
+TEXT
+Great Istari Gandalf the White has finally left from Middle Earth.
+ENDTEXT
+CREATEUNIT
+unit=Forces of Aman
+owner=TriggerDefender
+Count=5
+veteran=yes
+homecity=none
+randomize
+locations
+54,74
+53,79
+56,84
+52,72
+endlocations
+MAKEAGGRESSION
+who=Isengard
+whom=Mordor
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gandalf the White
+attacker=anybody
+defender=Gondor
+@THEN
+FLAG
+continuous
+flag=7
+Who=Gondor
+state=on
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dain II
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+King of Dwarves, Dain II Ironfoot is killed!
+Dwarves leave from the East. 
+ENDTEXT
+CREATEUNIT
+unit=Dwarves
+owner=Free People
+Count=3
+veteran=yes
+homecity=none
+locations
+47,55
+51,55
+50,60
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Cirdan
+attacker=anybody
+defender=Elves
+@THEN
+TEXT
+One of the greatest of the Eldar, Cirdan the Shipwright, 
+has passed on into the West. 
+ENDTEXT
+CREATEUNIT
+unit=Wormtongue
+owner=Elves
+veteran=yes
+homecity=none
+locations
+86,74
+94,60
+98,40
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Cirdan
+attacker=anybody
+defender=Elves
+@THEN
+CREATEUNIT
+unit=Rangers
+count=5
+owner=Elves
+veteran=yes
+homecity=none
+randomize
+locations
+95,53
+85,73
+95,35
+42,40
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Galadriel
+attacker=anybody
+defender=Elves
+@THEN
+CREATEUNIT
+unit=Galadriel
+owner=Elves
+veteran=no
+homecity=Lorien
+locations
+86,74
+94,60
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=anybody
+defender=Swarthy men
+@THEN
+TEXT
+Barbarian king is killed in battle!
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=-2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Saruman
+attacker=anybody
+defender=Isengard
+@THEN
+TEXT
+Saruman was defeated and retreated back into his Orthanc Tower.
+ENDTEXT
+CREATEUNIT
+unit=Saruman
+owner=Isengard
+veteran=no
+homecity=NONE
+locations
+76,92
+66,88
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Wizard
+attacker=anybody
+defender=Elves
+@THEN
+TEXT
+Wise wizard Radagast the Brown tires of fighting and
+returns to his home over the sea.
+Animals from Mirkwood forest join the fight against Sauron.
+ENDTEXT
+CREATEUNIT
+unit=Eagles
+count=2
+owner=Elves
+veteran=yes
+homecity=NONE
+locations
+86,74
+97,57
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gimli
+attacker=anybody
+defender=Gondor
+@THEN
+delay
+delay=10
+TEXT
+Rumors that Gimli, son of Gloin, is murdered in Gondor have reached North. Dwarves decide to take revenge.
+ENDTEXT
+MAKEAGGRESSION
+who=Free People
+whom=Gondor
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Legolas
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+Fellowship member Legolas is wounded and wants to go West.
+ENDTEXT
+CREATEUNIT
+unit=Legolas
+owner=Elves
+veteran=no
+homecity=NONE
+locations
+48,44
+43,41
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Legolas
+attacker=anybody
+defender=Elves
+@THEN
+TEXT
+Fellowship member Legolas is killed!
+ENDTEXT
+CREATEUNIT
+unit=Forces of Aman
+owner=Elves
+veteran=yes
+homecity=none
+locations
+48,50
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gimli
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=4
+TEXT
+Gimli comes to Gondor to fight there against Sauron! 
+ENDTEXT
+CREATEUNIT
+unit=Gimli
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+95,119
+83,121
+66,114
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=0
+state=off
+@AND
+UNITKILLED
+unit=Legolas
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=3
+TEXT
+Legolas comes to Gondor to fight there against Sauron! 
+ENDTEXT
+CREATEUNIT
+unit=Legolas
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+95,119
+83,121
+66,114
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Gondor
+flag=0
+state=on
+@AND
+UNITKILLED
+unit=Legolas
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=3
+TEXT
+Legolas has recovered from his wounds. 
+ENDTEXT
+CREATEUNIT
+unit=Legolas
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+86,74
+86,86
+97,39
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Pippin
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=6
+TEXT
+Pippin comes to Gondor to fight there against Sauron! 
+ENDTEXT
+CREATEUNIT
+unit=Pippin
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+95,119
+82,110
+65,117
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Merry
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=8
+TEXT
+Merry comes to Gondor to fight there against Sauron! 
+ENDTEXT
+CREATEUNIT
+unit=Merry
+owner=Gondor
+veteran=yes
+homecity=NONE
+locations
+95,119
+80,130
+79,103
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Boromir
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+Fellowship member Boromir is killed!
+ENDTEXT
+CHANGEMONEY
+receiver=Gondor
+amount=-1000
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Isengard
+flag=0
+state=on
+@AND
+UNITKILLED
+unit=Boromir
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+Boromir has followed The Ring and joined with Saruman!
+ENDTEXT
+CREATEUNIT
+unit=Boromir
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+73,89
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Faramir
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+Valliant guerrilla fighter Faramir finally meets his match!
+ENDTEXT
+CREATEUNIT
+unit=The Grond
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+102,118
+105,117
+112,110
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Eowyn
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+Brave Rohan fighter Eowyn got seriously wounded saving Gondor!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Pippin
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The brave young Hobbit Pippin Took is no more!
+ENDTEXT
+CHANGEMONEY
+receiver=Mordor
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Merry
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+The brave young Hobbit Merry Brandybuck is no more!
+ENDTEXT
+CHANGEMONEY
+receiver=Swarthy men
+amount=2000
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Warlord
+attacker=anybody
+defender=Swarthy men
+@THEN
+TEXT
+A famous warlord is killed in battle!
+ENDTEXT
+CREATEUNIT
+unit=Warlord
+owner=Swarthy men
+veteran=yes
+homecity=none
+locations
+121,77
+124,84
+98,168
+116,166
+endlocations
+CHANGEMONEY
+receiver=Swarthy men
+amount=-1000
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Eomer
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+Brave Rohan fighter Eomer got seiously wounded in the defense of Gondor!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gwaihir
+attacker=anybody
+defender=anybody
+@THEN
+TEXT
+The great Eagle Gwaihir has flown his last flight!
+ENDTEXT
+CREATEUNIT
+unit=Eagles
+count=3
+owner=Free People
+veteran=yes
+homecity=none
+randomize
+locations
+84,60
+81,47
+94,48
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gwaihir
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+Hearing about the death of Gwaihir, Radagast Brown arrived to Lorien 
+and offered his help to protect The Golden Wood. 
+ENDTEXT
+CREATEUNIT
+unit=Wizard
+owner=Elves
+veteran=yes
+homecity=none
+locations
+86,74
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Treebeard
+attacker=anybody
+defender=anybody
+@THEN
+TEXT
+Treebeard expires. Perhaps the Ent species is doomed to extinction.
+Saruman has convinced the other ents that he serves their interests best.
+ENDTEXT
+CREATEUNIT
+unit=Ents
+owner=Isengard
+Count=2
+veteran=yes
+homecity=Isengard
+locations
+79,89
+81,91
+76,92
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Balrog
+attacker=anybody
+defender=Mordor
+@THEN
+delay
+delay=7
+TEXT
+Rumors say that The Durin's Bane is no more.
+Dwarves wanted to take back what was rightfully theirs. 
+ENDTEXT
+CREATEUNIT
+unit=Dwarves
+owner=Free People
+Count=7
+veteran=yes
+homecity=none
+locations
+81,75,1
+79,75,1
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Dragon
+attacker=anybody
+defender=Chaos
+@THEN
+TEXT
+Dragon is killed!
+ENDTEXT
+CHANGEMONEY
+receiver=TriggerAttacker
+amount=500
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Elrond
+attacker=anybody
+defender=Free People
+@THEN
+TEXT
+Elrond Halfelven, survivor from the First Age, finally is in
+Middle Earth no more.
+High Elves flee from Rivendell.
+ENDTEXT
+CREATEUNIT
+unit=High Elves
+Count=10
+owner=Elves
+veteran=yes
+homecity=none
+locations
+48,44
+42,42
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Wormtongue
+attacker=anybody
+defender=Isengard
+@THEN
+TEXT
+Wormtongue is killed! Rohan is free from stupor.
+ENDTEXT
+CREATEUNIT
+unit=Eored
+Count=8
+owner=Gondor
+veteran=yes
+homecity=none
+locations
+82,104
+80,104
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Sauron
+attacker=anybody
+defender=Mordor
+@THEN
+FLAG
+continuous
+flag=10
+Who=Mordor
+state=off
+TEXT
+Sauron, Lord of all that is Evil, servant of Morgoth, is defeated!
+ENDTEXT
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Theoden
+attacker=anybody
+defender=Gondor
+@THEN
+TEXT
+Theoden the King is killed!
+Woe to the Gondor! The fleet is standing at the city borne up on the wind: Dromons with black sails bellying in the breeze. 
+ENDTEXT
+CREATEUNIT
+unit=Dromon
+count=6
+owner=Gondor
+veteran=yes
+homecity=none
+randomize
+locations
+98,126
+98,124
+99,123
+96,124
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Gandalf the Grey
+attacker=anybody
+defender=Free People
+@THEN
+delay
+delay=2
+TEXT
+King Theoden, free from the corrupting influence of Wormtongue, rises
+from his stupor to save Rohan and Gondor!
+ENDTEXT
+CREATEUNIT
+unit=Theoden
+owner=Gondor
+veteran=yes
+homecity=none
+locations
+82,104
+77,101
+95,119
+67,109
+endlocations
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Shelob
+attacker=anybody
+defender=Mordor
+@THEN
+TEXT
+Mordor is under attack!
+ENDTEXT
+CREATEUNIT
+unit=Spiders
+count=4
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+114,116
+111,107
+115,109
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=Rangers
+attacker=anybody
+defender=Free People
+@THEN
+CREATEUNIT
+unit=Rangers
+count=2
+owner=Free People
+veteran=no
+homecity=none
+randomize
+locations
+61,69
+72,54
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+Checkflag
+Who=Free People
+Mask=0b00000000000000000000000010100100
+Count=3
+State=On
+@AND
+CHECKFLAG
+Who=Mordor
+flag=4
+state=off
+@THEN
+TEXT
+Help for Free People has arrived from The West!
+ENDTEXT
+FLAG
+continuous
+flag=4
+Who=Mordor
+state=on
+CREATEUNIT
+unit=Forces of Aman
+Count=20
+owner=Free People
+veteran=yes
+homecity=none
+randomize
+locations
+61,101
+60,98
+60,90
+61,95
+63,99
+65,99
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+Checkflag
+Who=Gondor
+Mask=0b00000000000000000000000010101000
+Count=3
+State=On
+@AND
+CHECKFLAG
+Who=Mordor
+flag=4
+state=off
+@THEN
+TEXT
+Help for Gondor has arrived from The West!
+ENDTEXT
+FLAG
+continuous
+flag=4
+Who=Mordor
+state=on
+CREATEUNIT
+unit=Forces of Aman
+Count=20
+owner=Gondor
+veteran=yes
+homecity=none
+randomize
+locations
+60,108
+61,121
+60,122
+60,124
+61,125
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+Checkflag
+Who=Elves
+Mask=0b00000000000000000000000101000000
+Count=2
+State=On
+@AND
+CHECKFLAG
+Who=Mordor
+flag=4
+state=off
+@THEN
+TEXT
+Help for Elves has arrived from The West!
+ENDTEXT
+FLAG
+continuous
+flag=4
+Who=Mordor
+state=on
+CREATEUNIT
+unit=Forces of Aman
+Count=20
+owner=Elves
+veteran=yes
+homecity=none
+randomize
+locations
+52,72
+54,74
+54,76
+54,78
+57,79
+endlocations
+JUSTONCE
+@ENDIF
+
+; UNITS
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+TEXT
+Saruman's army is moving!
+ENDTEXT
+CREATEUNIT
+unit=Uruk Orcs
+count=10
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+77,93
+76,94
+74,92
+endlocations
+JUSTONCE
+MAKEAGGRESSION
+who=Isengard
+whom=Gondor
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+CREATEUNIT
+unit=Trolls
+count=4
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+77,93
+76,94
+74,92
+endlocations
+JUSTONCE
+MAKEAGGRESSION
+who=Isengard
+whom=Free People
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+CREATEUNIT
+unit=Uruk-Hai
+count=8
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+77,93
+76,94
+74,92
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+CREATEUNIT
+unit=Wolves
+count=6
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+77,93
+76,94
+74,92
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+CREATEUNIT
+unit=Warg Riders
+count=5
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+77,93
+76,94
+74,92
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=6
+state=on
+@THEN
+CREATEUNIT
+unit=Wild Men
+count=7
+owner=Isengard
+veteran=yes
+homecity=none
+randomize
+locations
+76,92
+77,93
+76,94
+74,92
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+TEXT
+Sauron sends out his main army!
+ENDTEXT
+CREATEUNIT
+unit=Uruk Orcs
+count=15
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+CREATEUNIT
+unit=Easterlings
+count=8
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+CREATEUNIT
+unit=Mumakil
+count=6
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+CREATEUNIT
+unit=Haradrim
+count=6
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+CREATEUNIT
+unit=Trolls
+count=10
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+CREATEUNIT
+unit=Wolves
+count=6
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+CREATEUNIT
+unit=Warg Riders
+count=8
+owner=Mordor
+veteran=yes
+homecity=NONE
+randomize
+locations
+100,106
+101,111
+101,113
+102,118
+102,120
+103,117
+105,117
+106,116
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=7
+state=on
+@THEN
+TEXT
+The mammoth battering ram dubbed "The Grond" draws near to Minas Tirith!
+ENDTEXT
+CREATEUNIT
+unit=The Grond
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+102,118
+103,117
+112,110
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=anybody
+flag=0
+state=on
+@THEN
+CREATEUNIT
+unit=Olog-Hai
+owner=Chaos
+veteran=yes
+homecity=none
+randomize
+locations
+84,22
+92,16
+75,9
+108,16
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Mordor
+flag=10
+state=on
+@THEN
+CREATEUNIT
+unit=Trolls
+owner=Mordor
+veteran=yes
+homecity=NONE
+locations
+112,110
+endlocations
+CHANGEMONEY
+receiver=Swarthy men
+amount=100
+@ENDIF
+
+@IF
+RECEIVEDTECHNOLOGY
+technology=90
+receiver=Isengard
+@THEN
+CREATEUNIT
+unit=Olog-Hai
+owner=Mordor
+veteran=yes
+homecity=none
+locations
+112,110
+endlocations
+CHANGEMONEY
+receiver=Isengard
+amount=500
+@ENDIF
+
+@IF
+RANDOMTURN     
+denominator=4
+@AND
+CHECKFLAG
+Who=Mordor
+flag=10
+state=on
+@THEN
+CREATEUNIT
+unit=Great Spider
+owner=Chaos
+veteran=yes
+homecity=none
+randomize
+locations
+122,6,0
+71,3,0
+100,6,0
+105,23,1
+endlocations
+@ENDIF
+
+@IF
+RANDOMTURN
+denominator=10
+@THEN
+CREATEUNIT
+unit=Dragon
+owner=Chaos
+veteran=yes
+homecity=none
+randomize
+locations
+131,5
+107,3
+76,2
+endlocations
+@ENDIF
+
+@ENDEVENTS

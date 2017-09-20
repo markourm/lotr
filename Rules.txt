@@ -1,0 +1,1159 @@
+;
+;   FANTASY GAME DATA 
+;   Copyright (c) 1999 by MicroProse Software
+;
+;   Modified by Marko Urm
+;   for LORD OF THE RINGS scenario	
+;
+;
+;   This file can be altered at your own risk to change
+;   the rules of the game.  Keep in mind that altering the
+;   contents of this file may cause your game to malfunction,
+;   particularly if you use values outside the specified
+;   ranges.
+;
+
+;
+;   Cosmic Principles
+;
+;   The following numbers control various key rules
+;   of the game.  GREAT discretion is advised if you
+;   opt to change these.  Values too far out of the
+;   expected range can cause the game to behave strangely.
+;   All values entered in rules.txt are bounded by +/-127. 
+;   However, this does not mean that all numbers within this 
+;   range will work properly, for example, unit costs must 
+;   not exceed 17.
+;
+@COSMIC
+3       ; Road movement multiplier
+2       ; 1 in x chance Trireme lost (mod. by Seafaring, Navigation)
+2       ; # of food each citizen eats per turn
+20      ; # of rows in food box (rows * city_size+1 = box)
+10      ; # of rows in shield box
+2       ; Settlers eat (govt <= Monarchy)
+2       ; Settlers eat (govt >= Communism)
+7       ; City size for first unhappiness at Chieftain level
+14      ; Riot factor based on # cities (higher factor lessens the effect)
+8       ; Aqueduct needed to exceed this size
+12      ; Sewer System needed to exceed this size
+30      ; Tech paradigm (higher # slows research)
+40      ; Base time for engineers to transform terrain (x2)
+3       ; Monarchy pays support for all units past this (upper bound 8)
+3       ; Communism pays support for all units past this (upper bound 8)
+8       ; Fundamentalism pays support for all units past this. (upper bound 8)
+4       ; Communism is equivalent of this palace distance.
+60      ; Fundamentalism loses this % of science
+100     ; Percent shield penalty for production type change
+5       ; Max paradrop range
+75      ; Mass/Thrust paradigm (increasing slows spaceship time)
+8       ; Max effective science rate in fundamentalism (x10, so 5 = 50%)
+1	; Value of each citizen to the Civilization Score.
+200	; Value of each wonder to the Civilization Score.
+2	; Reward for landing on A. Centauri first = this multiplier*(# of habitats)*(prob. of success) 
+-1	; Cost to Civilization Score (+ or -) for each extant non-AI controlled polluted tile. 
+1	; For each turn of peace after turn 199, this amount *3 is added to Civilization Score.
+5	; Value to the Civilization Score of each future tech researched.
+-100	; Penalty assessed to Civilization Score each time player betrays another race.
++0	; Cost to Civilization Score (+ or -) for each unit destroyed.
+00000000; bitmask for goodie huts, right bit =map0, 0=no goodie huts
+1	; Helicopters: get surprise from huts - 1, don't get surprise from huts - 0
+;
+;   Civilization Advances
+;
+;   Ai Value, Civilized Modifier, Preq1, Preq2, Tech Code
+;
+;     Ai Value = Basic value at which computer players
+;                view this advance (used in determining
+;                which discovery to pursue, which to
+;                acquire during exchanges, and value of
+;                gift during diplomacy).
+;     Modifier = Modifier to value based on the "civilized"
+;                aspect of a leader's personality.  Positive
+;                values increase value for civilized leaders,
+;                decrease it for militaristic.  Negative
+;                values vice versa.
+;     preq1, preq2 = Prerequisites
+;
+;   Tech Code
+;   0,0 - Military  0,1 - Economic  0,2 - Political                  0,4 - War Magic
+;                   1,1 - Seafaring 1,2 - Social     1,3 - Academic  1,4 - White Magic
+;						     2,3 - Applied
+;
+;   
+;
+@CIVILIZE
+Economy IV,         1, 1,  Cor, nil, 0, 1    ; AFl	0
+Wisdom I,           1, 1,  nil, nil, 1, 3    ; Alp
+Happiness IV,       1, 1,  MT,  nil, 1, 2    ; Amp
+Happiness V,        1, 1,  Amp, nil, 1, 2    ; Ast
+Happiness VI,       1, 1,  Ast, nil, 1, 2    ; Ato
+Elven Cities,       8, 0,  E2,  nil, 0, 2    ; Aut	5
+Economy I,          1, 1,  nil, nil, 0, 1    ; Ban
+Bridge Building,    4, 0,  nil, nil, 2, 3    ; Bri
+Economy II,         1, 1,  Ban, nil, 0, 1    ; Bro
+Happiness I,        1, 1,  nil, nil, 1, 2    ; Cer
+Economy V,          1, 1,  AFl, nil, 0, 1    ; Che	10
+Numenor Wonders,    1, 0,  Las, nil, 2, 3    ; Chi
+Wisdom II,          1, 1,  Alp, nil, 1, 3    ; CoL
+Wisdom III,         1, 1,  CoL, nil, 1, 3    ; CA
+Population I,       1, 1,  nil, nil, 1, 1    ; Cmb 
+The Ring,           0, 0,  Gun, nil, 0, 0    ; Cmn	15
+Population II,      1, 1,  Cmb, nil, 1, 1    ; Cmp
+Elvish Wonders,     1, 0,  Phy, nil, 2, 3    ; Csc
+Population IV,      1, 1,  Rfg, nil, 1, 1    ; Cst
+Economy III,        1, 1,  Bro, nil, 0, 1    ; Cor
+Population V,       1, 1,  Cst, nil, 1, 1    ; Cur	20
+Ents,               0, 0,  Gun, nil, 0, 0    ; Dem
+Population VI,      1, 1,  Cur, nil, 1, 1    ; Eco
+Government I,       1, 0,  nil, nil, 0, 2    ; E1
+Love for Woods,     8, 0,  nil, nil, 0, 2    ; E2
+Government II,      1, 0,  E1,  nil, 0, 2    ; Eng	25
+Production I,       1, 0,  nil, nil, 2, 3    ; Env
+Production II,      1, 0,  Env, nil, 2, 3    ; Esp
+Wisdom IV,          1, 1,  CA,  nil, 1, 3    ; Exp  
+Production III,     1, 0,  Esp, nil, 2, 3    ; Feu
+Production IV,      1, 0,  Feu, nil, 2, 3    ; Fli	30
+War,                0, 0,  Gun, nil, 0, 2    ; Fun
+Saruman Wonders,    1, 0,  Whe, nil, 2, 3    ; FP
+Government III,     1, 0,  Eng, nil, 0, 2    ; Gen
+General Uprisings,  4, 1,  Gun, nil, 1, 2    ; Gue
+Unavailable,        0, 0,  no,  no,  2, 2    ; Gun	35 
+Human Military I,   6,-1,  nil, nil, 0, 0    ; Hor
+Eastern Culture,    8, 0,  Lab, nil, 0, 2    ; Ind
+Palantir of Orthanc,8, 0,  nil, nil, 0, 2    ; Inv
+Mordor Wonders,     1, 0,  Rec, nil, 2, 3    ; Iro
+Human Military II,  6,-1,  Hor, nil, 0, 0    ; Lab	40
+Numenor Military I, 6,-1,  Lab, nil, 0, 0    ; Las
+Free People Wonders,8, 0,  Las, nil, 2, 3    ; Ldr
+Longboat,           1, 0,  nil, nil, 0, 0    ; Lit
+Galley,             1, 0,  Lit, nil, 0, 0    ; Too
+The Fourth Age,     0, 0,  Gun, nil, 2, 3    ; Mag	45
+Settlers,           0, 0,  Gun, nil, 0, 2    ; Map
+Numenor Military II,6,-1,  Las, Too, 0, 0    ; Mas
+Barbarian Military I,6,-1, Ind, nil, 0, 0    ; MP
+Barbarian Military II,6,-1,MP,  nil, 0, 0    ; Mat
+Barbarian Military III,6,-1,Mat,nil, 0, 0    ; Med	50
+Dwarves,            0, 0,  Gun, nil, 0, 0    ; Met
+Dark Ships,         1, 0,  Rob, nil, 0, 0    ; Min  
+Summon Ice Drake,   8,-1,  Gun, nil, 0, 4    ; Mob
+Monarchy,           1, 1,  nil, nil, 0, 2    ; Mon
+Happiness III,      1, 1,  Mys, nil, 1, 2    ; MT	55
+Happiness II,       1, 1,  Cer, nil, 1, 2    ; Mys
+Hobbits,            0, 0,  Gun, nil, 0, 0    ; Nav
+Undead,             0, 0,  Gun, nil, 0, 0    ; NF
+Sea Navigation,     1, 0,  nil, nil, 0, 0    ; NP
+Saruman's Treachery,8, 0,  Inv, nil, 0, 2    ; Phi	60
+Elvish Military I,  6,-1,  Aut, nil, 0, 0    ; Phy
+Elvish Military II, 6,-1,  Phy, nil, 0, 0    ; Pla
+Elvish Military III,6,-1,  Pla, nil, 0, 0    ; Plu  
+Eagles,             0, 0,  Gun, nil, 0, 0    ; PT
+Elvish Military IV, 6,-1,  Plu, nil, 0, 0    ; Pot	65
+Numenor Military III,6,-1, Mas, nil, 0, 0    ; Rad
+Transposition Spell,6, 0,  Gun, nil, 1, 4    ; RR
+Mordor Military I,  6,-1,  nil, nil, 0, 0    ; Rec
+Mordor Military II, 6,-1,  Rec, nil, 0, 0    ; Ref  
+Population III,     1, 1,  Cmp, nil, 1, 1    ; Rfg	70
+Rohan Riders,       6,-1,  Gun, nil, 0, 2    ; Rep
+Mordor Military III,6,-1,  Ref, nil, 0, 0    ; Rob  
+Forces of Aman,     0, 0,  Gun, nil, 0, 0    ; Roc
+Mordor Military IV, 6,-1,  Rob, nil, 0, 0    ; San  
+Mordor Military V,  6,-1,  San, nil, 0, 0    ; Sea	75
+Underworld Horror,  0, 0,  Gun, nil, 0, 0    ; SFl
+Mordor Military VI, 6,-1,  Sea, nil, 0, 0    ; Sth
+Mordor Military VII,6,-1,  Sth, nil, 0, 0    ; SE
+Mordor Military VIII,6,-1, SE,  Min, 0, 0    ; Stl
+Morgoth Military I, 6,-1,  Stl, nil, 0, 0    ; Sup	80
+Spy Birds,          0, 0,  nil, nil, 0, 0    ; Tac
+Morgoth Military II,6,-1,  Sup, nil, 0, 0    ; The
+Morgoth Military III,6,-1, The, nil, 0, 0    ; ToG
+Trade,              1, 0,  nil, nil, 0, 1    ; Tra
+Great Gate,         0, 0,  Gun, nil, 0, 0    ; Uni	85
+Morgoth Military IV,6,-1,  ToG, nil, 0, 0    ; War
+Wild Men,           6,-1,  Phi, nil, 0, 0    ; Whe 
+Saruman Military,   6,-1,  Whe, nil, 0, 0    ; Wri
+Useless,            1, 0,  Exp, nil, 1, 4    ; ...
+Ringwraiths,        0, 0,  Gun, nil, 0, 0    ; U1 	90
+Heroes,             0, 0,  Gun, nil, 2, 2    ; U2 
+Saruman,            0, 0,  Gun, nil, 2, 2    ; U3 
+Morgoth and Humans, 0, 0,  Gun, nil, 2, 2    ; X1 
+Swarthy Men,        0, 0,  Gun, nil, 2, 2    ; X2 
+Numenoreans and Elves,0,0, Gun, nil, 2, 2    ; X3	95
+Numenorean,         0, 0,  Gun, nil, 2, 2    ; X4
+Humans,             0, 0,  Gun, nil, 2, 2    ; X5
+Elves,              0, 0,  Gun, nil, 2, 2    ; X6
+Morgoth,	    0, 0,  Gun, nil, 2, 2    ; X7	99
+
+;
+; Final 10 tech slots (U1 to X7) allow you to define your own 
+; civilization advances if desired.  Supply the name, the AI 
+; value, and the prerequisites.
+;
+; Then use the "U1", "U2", etc. 
+; identifier to incorporate it into the tech chain as a
+; prerequisite for other techs, units, city improvements.
+;
+
+;
+;  City Improvements
+;
+;   cost(x10), upkeep, preq
+;
+@IMPROVE
+Nothing,                  1,  0,    nil,
+Tower,                    10, 0,    E1,
+Military School,          3,  45,   Eng,
+Storehouse,               6,  1,    Cmb,
+Temple,                   4,  1,    Cer,
+Marketplace,              8,  1,    Ban,  ;5
+Sage's Library,           5,  10,   Alp,
+Court,                    8,  1,    Eng,
+City Walls,               1,  0,    nil,
+Aqueduct,                 8,  2,    Cur,
+Counting House,           12, 3,    Bro,  ;10
+Sacrificial Altar,        12, 3,    Amp,
+Archive,                  6,  15,   CoL,
+War For Supremacy,        1,  0,    Fun,
+Arena,                    10, 4,    Ato,
+Forge,                    4,  30,   Env,  ;15
+Artifact Guild,           4,  40,   Fli,
+Fireball Shield,          20, 4,    no,
+War For Supremacy,        1,  0,    no,
+Alchemical Guild,         4,  60,   Esp,
+Staff of Power,           24, 4,    no,   ;20
+Nexus,                    16, 2,    no,
+Toll House,               16, 4,    Che,
+Town Hall,                12, 2,    Eco,
+Prison,                   8,  3,    Cst,
+Trade Guild,              20, 5,    AFl,  ;25
+Alchemy Laboratory,       8,  30,   CA,
+Magic Shield,             10, 2,    no,
+Coastal Fortress,         8,  8,    nil,
+Crystal Pyramid,          32, 4,    no,
+Harbor,                   6,  1,    Cmp,  ;30
+Temple Of Ulmo,           3, 30,    Feu,
+Temporal Portal,          16, 3,    no,
+Healing House,            6,  2,    Plu,
+Sea Fortress,             8,  8,    no,
+Astral Portal,            16, 3,    no,   ;35
+S.E. Structure,           8,  0,    no,
+War For Supremacy,        1,  0,    Min,
+War For Supremacy,        1,  0,    Lit,
+(Base Metal to Gold),     60, 0,    Cor,  ;39
+The Palantir of Minas Anor,20,0,    Chi,  ; Pyramids			GONDOR					
+Galadriel's Mirror,       20, 0,    Csc,  ; Hanging Gardens		ELVES
+Key of Orthanc,           20, 0,    Inv,  ; Colossus			SARUMAN		
+The Grey Havens,          20, 0,    Csc,  ; Lighthouse			ELVES
+Dome of Stars,            30, 0,    Gun,  ; Great Library+		OUT
+Caras Galadhon,           30, 0,    Csc,  ; Oracle			ELVES
+The Nenya Ring,           30, 0,    Csc,  ; Great Wall			ELVES
+Feast Hall of Meduseld,   30, 0,    Chi,  ; Sun Tsu's War Academy	GONDOR
+Dark Tower,               30, 0,    Iro,  ; King Richard's Crusade	MORDOR
+The Seventh Palantir,     20, 0,    Gun,  ; Marco Polo's Embassy+	OUT
+Last Homely House,        30, 0,    Ldr,  ; Michaelangelo's Chapel  50  FREE PEOPLE
+Tower of Orthanc,         30, 0,    FP,   ; Copernicus's Observatory	SARUMAN
+The Havens of Cirdan,     40, 0,    Csc,  ; Magellan's Expedition	ELVES
+The Vilya Ring,           40, 0,    Csc,  ; Shakespeare's Theatre	ELVES
+Mithril Mines,            40, 0,    Iro,  ; Leonardo's Workshop 	OUT Moria
+The White Tower,          40, 0,    Chi,  ; J.S. Bach's Cathedral   55  GONDOR
+The Palantir of Orthanc,  40, 0,    Inv,  ; Isaac Newton's College	SARUMAN
+The Citadel,              40, 0,    Chi,  ; Adam Smith's Trading CompanyGONDOR
+Glittering Caves,         40, 0,    Chi,  ; Darwin's Voyage		OUT Helm's Deep
+Argonath,                 40, 0,    Gun,  ; Statue of Liberty+		OUT
+Tower of Orthanc,         30, 0,    Gun,  ; Eiffel Tower+	60	OUT
+Valar Shrine,             60, 0,    Pot,  ; Women's Suffrage+		ELVES
+The Black Gate,           60, 0,    Iro,  ; Hoover Dam			MORDOR
+Tower of Sorcery,         60, 0,    Iro,  ; Manhattan Project		OUT Minas Morgul
+United Nations,           60, 0,    Gun,  ; United Nations+		OUT	
+The Ithil Stone,          60, 0,    Gun,  ; Apollo Program+	65	OUT
+Saruman's Wand,           60, 0,    FP,   ; SETI Program		SARUMAN
+The White Tree,           60, 0,    Mag,  ; Cure for Cancer	67	GONDOR & FREE PEOPLE
+
+;
+; Expiration advancements for Wonders of the World
+;
+@ENDWONDER
+nil,       ; Cauldron Of Plenty
+nil,       ; Golden Orchard
+nil,       ; Sacred Menhir
+nil,       ; Eye Of Ran
+Cer,       ; Wizard's Conclave
+nil,       ; Merlin's Oracle
+nil,       ; Excalibur
+nil,       ; Round Table
+nil,       ; Holy Quest
+Cer,       ; The Crown's Emissary
+nil,       ; Altar Of Enlightenment
+nil,       ; Stonehenge
+nil,       ; Brian's Expedition
+nil,       ; Royal Joust
+Cer,       ; Sacred Rune Of Alteration
+nil,       ; Bard's Tavern
+nil,       ; Tome Of Inspiration
+nil,       ; Pearl Obelisk
+nil,       ; Philosopher's Stone
+Cer,       ; Orb Of Peace
+nil,       ; Angelic Monument 
+nil,       ; Glyph Of Understanding
+nil,       ; Circle Of Summoning
+nil,       ; Pandora's Box
+Cer,       ; Council Of The Overmind
+Cer,       ; Deus Ex Machina
+nil,       ; Eye Of Odin
+nil,       ; Sangreal
+
+
+;
+;    Unit Types
+;
+; until, domain,  move,rng,  att,def  hit,firepwr  cost,hold,  role, preq,  flags
+;
+; until       = Civ advance which renders unit obsolete
+; Move        = Movement rate (spaces per turn)
+; Range       = # of turns fuel carried (0 for non-air units)
+;
+; domain      = Movement domain of unit
+:               0 = Ground
+;               1 = Air
+;               2 = Sea
+;
+; att         = Attack factor (chance to score hit attacking)
+; def         = Defense factor (chance to score hit defending)
+; hit         = Hit points (damage x10 which can be taken before elimination)
+; firepwr     = # damage points caused per hit scored on enemy.
+;
+; cost        = Cost (# of shield rows, usually of 10 shields each)
+; hold        = # of holds on ship (for carrying units)
+;
+; role        = AI role (Generally affects the way in
+;               which computer players use the unit, but
+;               roles >= 5 will actually affect abilities
+;               of the unit)
+;               0 = Attack
+;               1 = Defend
+;               2 = Naval Superiority
+;               3 = Air Superiority
+;               4 = Sea Transport
+;               5 = Settle
+;               6 = Diplomacy
+;               7 = Trade
+;
+; preq        = Prerequisite advance
+;
+; "Flags" control special advantages & restrictions.  Not
+; all of these flags "make sense" for all types of units
+; (paradropping ships, for instance).  Nonsensical variations
+; may produce bizarre effects (or worse).  You were warned.
+;
+;   000000000000001 = Two space visibility
+;   000000000000010 = Ignore zones of control
+;   000000000000100 = Can make amphibious assaults
+;   000000000001000 = Submarine advantages/disadvantages
+;   000000000010000 = Can attack air units (fighter)
+;   000000000100000 = Ship must stay near land (trireme)
+;   000000001000000 = Negates city walls (howitzer)
+;   000000010000000 = Can carry air units (carrier)
+;   000000100000000 = Can make paradrops
+;   000001000000000 = Alpine (treats all squares as road)
+;   000010000000000 = x2 on defense versus horse (pikemen)
+;   000100000000000 = Free support for fundamentalism (fanatics)
+;   001000000000000 = Destroyed after attacking (missiles)
+;   010000000000000 = x2 on defense versus air (AEGIS)
+;   100000000000000 = Unit can spot submarines
+;
+;
+@UNITS
+Settlers,     nil, 0,  1.,0,  0a,1d,  1h,1f, 10,0,  5, Map, 000000000000000 ;settlers 0  
+Dwarves,      nil, 0,  2.,0,  4a,3d,  3h,1f, 12,0,  1, Met, 000000000000010 ;engineers 
+Faramir,      nil, 0,  3.,0,  2a,1d,  9h,5f, 70,0,  3, U2,  000011101000111 ;warriors	
+Pikemen,      nil, 0,  1.,0,  1a,2d,  1h,1f,  1,0,  1, nil, 000010000000000 ;phalanx
+Archers,      nil, 0,  2.,0,  3a,2d,  1h,1f,  3,0,  1, Hor, 010000000000000 ;archers	
+Knights,      nil, 0,  3.,0,  4a,2d,  1h,1f,  5,0,  0, Las, 000000000000010 ;legion
+Elf Pikemen,  nil, 0,  1.,0,  1a,3d,  2h,1f,  3,0,  1, nil, 000001000000010 ;pikemen	
+Saruman,      nil, 0,  2.,0,  2a,1d, 11h,5f, 60,0,  1, U2,  000010001010011 ;musketeer	
+Treebeard,    nil, 0,  1.,0,  2a,1d, 12h,5f, 99,0,  0, U2,  000010001000010 ;fanatics	
+The Grond,    nil, 0,  3.,0, 12a,3d,  2h,4f, 30,0,  0, U2,  000110001000011 ;partisan	
+Uruk Orcs,     X7, 0,  2.,0,  3a,2d,  1h,1f,  2,0,  0, Rec, 000100000000000 ;alpine troops 10 
+Snaga Orcs,    X7, 0,  1.,0,  1a,2d,  1h,1f,  1,0,  1, Rec, 000101000000000 ;rifleman
+Uruk-Hai,     nil, 0,  2.,0,  4a,2d,  2h,1f,  5,0,  0, Wri, 000001000000010 ;marines	
+Wolves,        X7, 0,  3.,0,  4a,2d,  1h,2f,  4,0,  3, Ref, 000100000000010 ;paratrooper	
+Spiders,       X7, 0,  1.,0,  5a,3d,  1h,1f,  4,0,  1, U2,  000001000000010 ;mech inf	
+Rohirrim,     nil, 0,  5.,0,  4a,2d,  1h,1f,  7,0,  0, Rep, 000010000000010 ;horsemen
+Easterlings,  nil, 0,  5.,0,  3a,2d,  1h,2f,  7,0,  3, MP,  000000000000010 ;chariot	
+Haradrim,     nil, 0,  4.,0,  4a,2d,  1h,2f, 10,0,  0, MP,  000000000000010 ;elephant	
+Dunedain,     nil, 0,  4.,0,  6a,3d,  2h,1f, 12,0,  0, Mas, 000000000000011 ;crusaders
+Sauron,       nil, 0,  5.,0,  3a,2d, 12h,10f,99,0,  0, U2,  100100001010011 ;knights 
+Wainriders,   nil, 0,  3.,0,  4a,2d,  2h,2f, 15,0,  0, Mat, 000000000000010 ;dragoons 20	 
+Mumakil,      nil, 0,  3.,0,  5a,3d,  2h,2f, 20,0,  3, Med, 000010000000010 ;cavalry
+Trolls,        X7, 0,  2.,0,  6a,2d,  2h,1f,  7,0,  0, Sea, 000000000000010 ;armor	
+Battering Ram,nil, 0,  2.,0,  3a,1d,  1h,2f,  3,0,  3, Lab, 000100001000000 ;catapult	
+Elves,        nil, 0,  2.,0,  5a,3d,  2h,1f,  9,0,  0, Phy, 000001000000011 ;cannon
+Elven Cavalry,nil, 0,  5.,0,  7a,2d,  2h,1f, 14,0,  3, Pla, 000000000000011 ;artillery
+Olog-Hai,      X7, 0,  2.,0,  8a,3d,  2h,2f, 17,0,  0, Sth, 000000000000010 ;howitzer 	
+Rangers,      nil, 0,  2.,0,  6a,3d,  2h,2f, 12,0,  0, Rad, 000000000000011 ;fighter	
+Nazgul,        X7, 1, 10.,2,  2a,1d,  7h,4f, 60,0,  0, U2,  100100000010011 ;bomber	
+High Elves,   nil, 0,  3.,0,  9a,4d,  3h,1f, 30,0,  0, Pot, 000001000000011 ;helicopter 	
+Dragon,        X7, 0,  4.,0, 20a,8d,  3h,1f, 34,0,  0, The, 000000000000010 ;stealth fighter 30
+Flying Dragon, X7, 1,  6.,2, 22a,8d,  3h,1f, 40,0,  0, War, 000000000010001 ;stealth bomber 
+Gimli,        nil, 0,  2.,0,  2a,1d,  8h,4f, 80,0,  3, U2,  000010001000010 ;trireme	
+Galley,       Min, 2,  6.,0,  4a,3d,  2h,1f, 10,3,  2, Too, 000000000000000 ;sail 	
+Eored,        nil, 0,  5.,0,  7a,2d,  2h,2f, 14,0,  0, Rad, 000010000000010 ;galley	
+White Ship,   nil, 2,  7.,0,  6a,4d,  4h,1f, 30,5,  2, Plu, 000000000000001 ;frigate 	
+Warg Riders,   X7, 0,  3.,0,  4a,2d,  1h,1f,  3,0,  3, Rob, 000100000000010 ;ironclad 
+Werewolves,    X7, 0,  4.,0,  6a,3d,  1h,2f,  7,0,  3, Sth, 000000000000010 ;destroyer 	
+Great Spider,  X7, 0,  2.,0, 10a,5d,  4h,1f, 20,0,  1, Sup, 000001000000010 ;cruiser 	
+Watcher,       X7, 2,  4.,0,  5a,3d,  4h,1f, 15,1,  2, Stl, 000000000000000 ;AEGIS 	
+Dromon,       Plu, 2,  6.,0,  5a,3d,  2h,1f,  7,3,  2, Min, 000000000000010 ;battleship 40	
+Balrog,        X7, 0,  3.,0, 18a,9d,  3h,1f, 30,0,  0, ToG, 000010000000010 ;submarine 	 
+Frodo and Sam,nil, 0,  1.,0,  0a,1d,  6h,6f, 80,0,  3, U2,  100011000001010 ;carrier	
+Hobbits,      nil, 0,  1.,0,  2a,3d,  3h,1f,  7,0,  1, Nav, 000001000000011 ;transport 
+The Undead,    X7, 0,  1.,0,  7a,2d,  1h,3f,  7,0,  2, NF,  000101001000010 ;missile
+The Ring,     nil, 1,  3.,1, 99a,1d,  1h,1f, 20,0,  1, U2,  001000000000010 ;nuclear	
+Great Gate,    X7, 0,  0.,0,  0a,15d, 1h,1f, 15,0,  1, Uni, 000000000000000 ;diplomat	
+Wormtongue,   nil, 0,  4.,0,  0a,1d,  4h,1f,  1,0,  6, U2,  000010000001011 ;spy	 
+Eowyn,        nil, 0,  5.,0,  2a,1d,  8h,4f, 40,0,  3, U2,  000010001010010 ;caravan	
+Warlord,      nil, 0,  4.,0,  2a,1d,  6h,4f, 30,0,  3, U2,  000010001000010 ;freight	  
+Gandalf the Grey,nil,0,4.,0,  2a,1d, 11h,6f, 99,0,  3, U2,  000000001010011 ;explorer 50  
+Wild Men,     nil, 0,  2.,0,  4a,3d,  1h,1f,  4,0,  1, Whe, 000000000000000  
+Witch King,   nil, 1, 12.,2,  2a,1d, 10h,5f, 90,0,  3, U2,  100100000010011 	
+Great Eagle,  nil, 1, 10.,2,  9a,5d,  4h,1f,  9,0,  0, PT,  000010000010011 ;custom3
+Dark Rider,    X7, 0,  5.,0,  2a,1d,  7h,3f, 50,0,  3, U1,  000100000000011 	
+Aragorn,      nil, 0,  3.,0,  2a,1d, 11h,5f, 99,0,  3, U2,  000011001000111 	
+Eomer,        nil, 0,  5.,0,  2a,1d,  9h,4f, 70,0,  3, U2,  000010001000010 
+Ents,         nil, 0,  1.,0,  7a,4d,  4h,1f, 20,0,  0, Dem, 000010001000010 	
+Gandalf the White,nil,0,6.,0, 2a,1d, 12h,6f, 99,0,  3, U2,  000000001010011 	
+Forces of Aman,nil,0,  5.,0, 14a,6d,  5h,1f, 90,0,  0, Roc, 000000001010011 
+Legolas,      nil, 0,  2.,0,  2a,1d,  9h,4f, 80,0,  3, U2,  000011001000011 ;60
+Boromir,      nil, 0,  3.,0,  2a,1d, 10h,5f, 20,0,  3, U2,  000010001000010 ;extra8
+Wizard,       nil, 0,  5.,0,  2a,1d, 10h,5f, 50,0,  1, U2,  000000000000011 
+Merry,        nil, 0,  1.,0,  2a,1d,  6h,3f, 60,0,  3, U2,  000011001000011 
+Elrond,       nil, 1,  4.,1,  2a,1d, 12h,6f, 90,0,  1, U2,  000000000000011 
+Galadriel,    nil, 1,  4.,1,  3a,2d, 12h,4f, 99,0,  1, U2,  000000000000011 
+Shelob,       nil, 1,  2.,1,  2a,1d, 10h,5f, 50,0,  1, U2,  100000000010010 
+Gwaihir,      nil, 1, 14.,4, 12a,6d,  5h,1f, 99,0,  3, U2,  000010000010011 
+Theoden,      nil, 0,  4.,0,  2a,1d,  8h,3f, 20,0,  3, U2,  000000001000011 
+Nameless Horror,nil,0, 2.,0,  2a,1d,  9h,9f, 80,0,  3, SFl, 000000000000010 	
+Spy Birds,    nil, 1, 20.,1,  0a,1d,  1h,1f,  3,0,  4, Tac, 000000000000011 ;70	
+Tom Bombadil, nil, 0,  0.,0,  1a,6d,  6h,2f, 90,0,  1, U2,  100000000000001 	
+Pippin,       nil, 0,  1.,0,  2a,1d,  7h,3f, 40,0,  3, U2,  000011001000011  	
+Sauron's Eye, nil, 1,  3.,1,  3a,2d, 12h,9f, 99,0,  3, U2,  100100000010011 	
+Curunir,      nil, 0,  5.,0,  3a,2d, 11h,7f, 99,0,  0, U2,  100100001010011 	
+Dark Queen,   nil, 0,  5.,0,  3a,2d, 12h,7f, 99,0,  0, U2,  100100001010011 
+Dain II,      nil, 0,  1.,0,  2a,1d,  7h,4f, 60,0,  1, U2,  000010001000010 
+Cirdan,       nil, 1,  4.,1,  2a,2d, 12h,4f, 99,0,  1, U2,  000000000000011 	
+King,         nil, 0,  4.,0,  3a,2d, 11h,5f, 50,0,  0, U2,  100100001010011   
+Ancalagon II, nil, 0,  5.,0,  3a,2d, 11h,6f, 70,0,  0, U2,  000000001000011 ;79
+
+;
+; Note: the above 11 unit types (extra land, ship, air, and test units) are 
+; available for user defined unit types.  If these units are given prerequisites
+; other than "no" they will appear in the game when the specified
+; technology is reached.  Use if you want to create your own unit types
+; without sacrificing any of the predefined units.  Be sure to define
+; the "role" field accurately, so that the computer will understand how
+; to make use of the new units in its own civilizations.
+;
+; There is no requirement that the extra units be used to
+; create exactly one of each type; you could create three
+; ground units.  But the icons provided are for one of each.
+; The 11 extra unit types have default icons provided by the game.
+; To actually change the icons is a somewhat more difficult
+; task.  The icons are stored in "UNITS.GIF".
+;
+; Sound effects for these 11 units may be added by providing
+; CUSTOM1.WAV, CUSTOM2.WAV, and CUSTOM3.WAV for the extra units and
+: Extra1.wav through extra8.wav for the 8 test units.  These should be
+; 8-bit, mono, and sampled at 22050hz.
+;
+; Ideas:
+;
+; Hovercraft,   nil, 2,  8.,0,  0a,1d,  2h,2f,  7,1,  4, MP,  000000000000000
+;
+
+
+;
+;  Terrain
+;
+;  Movecost, defense,   food, shields, trade,
+;        . . .  Irrigate, bonus, #turns, ai-irrigate,
+;        . . .  Mine,     bonus, #turns, ai-mine
+;        . . .  Transform
+;        . . .  Impassable
+;
+;   defense = multiply by 50% to get % of normal combat factor defended at.
+;       (so 3 x 50% = 150%, meaning a strength 2 unit defends at 3).
+;
+;  Irrigate/Mine = yes, no, or type of terrain changed to
+;  Transform     = Terrain type engineers can transform to
+;
+;  bonus = # extra production from that change
+;
+;  turns = # turns for settler to make change
+;
+;  ai    = Minimum govt level necessary for
+;          computer player to want to perform irrigate/mine
+;        0 Never
+;        1 Despotism
+;        2 Monarchy
+;        3 Communism
+;        4 Fundamentalism
+;        5 Republic
+;        6 Democracy
+;
+;  impassable = yes, no. 
+
+@TERRAIN
+Desert,     1,2,  0,1,0,   yes, 1, 5, 5,   yes, 1, 5,  3,  Pln,  no,   ; Drt
+Plains,     1,2,  1,1,0,   yes, 1, 5, 1,   For, 0,15,  0,  Grs,  no,   ; Pln
+Grassland,  1,2,  2,1,0,   yes, 1, 5, 2,   For, 0,10,  0,  Hil,  no,   ; Grs
+Forest,     2,3,  1,2,0,   Pln, 0, 5, 5,   no,  0, 5,  0,  Grs,  no,   ; For
+Hills,      2,3,  1,0,0,   yes, 1,10, 0,   yes, 3,10,  1,  Pln,  no,   ; Hil
+Mountains,  3,4,  0,2,0,   no,  1,10, 0,   yes, 3,10,  6,  Hil,  yes,  ; Mou
+Tundra,     1,2,  1,0,0,   yes, 1,10, 1,   no,  0, 0,  0,  Drt,  no,   ; Tun
+Glacier,    2,2,  0,0,0,   no,  0, 0, 0,   yes, 1,15,  3,  Tun,  no,   ; Gla
+Swamp,      2,1,  1,0,0,   Grs, 0,15, 6,   For, 0,15,  0,  Pln,  no,   ; Swa
+Mt. Doom,   3,5,  7,8,5,   no,  0,99, 0,   no,  0,99,  0,  no,   no,   ; Jun
+Ocean,      1,2,  1,0,2,   no,  0, 0, 0,   no,  0, 0,  0,  no,   no,   ; Oce
+Oasis,      1,2,  3,1,0,
+Horses,     1,2,  1,3,2,
+Grassland,  1,2,  2,1,0,
+Pheasant,   2,3,  3,2,0,
+Coal,       2,4,  1,2,0,
+Gold,       3,6,  1,3,6,
+Game,       1,2,  3,1,0,
+Ivory,      2,2,  1,1,4,
+Peat,       2,3,  1,4,0,
+Gems,       2,3,  1,1,4,
+Fish,       1,2,  3,0,2,
+Oil,        1,2,  0,4,1,
+Wheat,      1,2,  3,1,1,
+Grassland,  1,2,  2,1,0,
+Silk,       2,3,  3,1,3,
+Wine,       2,4,  3,1,4,
+Iron,       3,6,  1,4,0,
+Furs,       1,2,  2,0,3,
+Oil,        2,2,  0,4,0,
+Spice,      2,3,  3,1,4,
+Fruit,      2,3,  4,1,1,
+Whales,     1,2,  2,2,3,
+
+@TERRAIN1
+Rocks,      3,2,  0,1,0,   Tun, 1, 5, 5,   yes, 1, 5,  3,  Tun, yes, ; Drt
+Rocks,      3,2,  1,1,0,   Tun, 1, 5, 1,   For, 0,15,  0,  Tun, yes, ; Pln
+Rocks,      3,2,  2,1,0,   Tun, 1, 5, 2,   For, 0,10,  0,  Tun, yes, ; Grs
+Rocks,      3,3,  1,2,0,   Tun, 0, 5, 5,   no,  0, 5,  0,  Tun, yes, ; For
+Rocks,      3,4,  1,0,0,   Tun, 1,10, 0,   yes, 3,10,  1,  Tun, yes, ; Hil
+Rocks,      3,6,  0,1,0,   Tun, 1,10, 0,   yes, 1,10,  6,  Tun, yes, ; Mou
+Caves,      1,2,  2,1,1,   no,  1, 4, 2,   yes, 2,10,  1,  Mou,  no, ; Tun
+Rocks,      3,2,  0,0,0,   Tun, 0, 0, 0,   yes, 1,15,  3,  Tun, yes, ; Gla
+Rocks,      3,3,  1,0,0,   Tun, 0,15, 6,   For, 0,15,  0,  Tun, yes, ; Swa
+Rocks,      3,3,  1,0,0,   Tun, 0,15, 6,   For, 0,15,  0,  Tun, yes, ; Jun
+Ocean,      3,2,  1,0,2,   no,  0, 0, 0,   no,  0, 0,  0,  no,   no, ; Oce
+Rocks,      3,2,  3,1,0,
+Rocks,      3,2,  1,3,0,
+Rocks,      3,2,  2,1,0,
+Rocks,      3,3,  3,2,0,
+Rocks,      3,4,  1,2,0,
+Rocks,      3,6,  0,1,6,
+Rocks,      3,2,  3,1,0,
+Rocks,      3,2,  1,1,4,
+Rocks,      3,3,  1,4,0,
+Rocks,      3,3,  1,0,4,
+Fish,       1,2,  3,0,2,
+Rocks,      3,2,  0,4,0,
+Rocks,      3,2,  3,1,0,
+Rocks,      3,2,  2,1,0,
+Rocks,      3,3,  1,2,3,
+Rocks,      3,4,  1,0,4,
+Iron,       3,6,  0,4,0,
+Rocks,      3,2,  2,0,3,
+Rocks,      3,2,  0,4,0,
+Rocks,      3,3,  3,0,4,
+Rocks,      3,3,  4,0,1,
+Mountain,   1,2,  2,2,3,
+
+@TERRAIN2
+Hurricane,      3,2,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Drt
+z Hurricane,    3,2,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Pln
+z ,             0,0,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Grs
+White Cloud,    3,2,  2,0,1,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; For
+Magic Cloud,    3,2,  2,1,0,   no,  0, 0, 0,  yes,  1, 7,  1,  no,   yes,  ; Hil 
+Storm Cloud,    3,2,  2,1,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Mou
+z ,             0,0,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Tun
+z ,             0,0,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Gla
+Cyclone,        3,2,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Swa
+Typhoon,        3,2,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   yes,  ; Jun
+Sky,            1,2,  0,0,0,   no,  0, 0, 0,   no,  0, 0,  0,  no,   no,   ; Oce
+Eye,            3,2,  1,1,1,
+z Eye,          3,2,  1,1,1,
+z ,             0,0,  0,0,0,
+Ozone Hole,     3,2,  1,3,2,
+Magic Node,     3,4,  2,1,4,
+Thunderhead,    3,6,  2,4,1,
+z ,             0,0,  0,0,0,
+z ,             0,0,  0,0,0,
+z Eye,          3,2,  1,1,1,
+z Eye,          3,2,  1,1,1,
+Updraft,        1,2,  1,1,1,
+z Eye,          3,2,  1,1,1,
+z Eye,          3,2,  1,1,1,
+z ,             0,0,  0,0,0,
+Whirlwind,      3,2,  2,2,2,
+Northern Lights,3,2,  3,3,1,
+Heat Lightning, 3,6,  2,3,2,
+z ,             0,0,  0,0,0,
+z ,             0,0,  0,0,0,
+z Eye,          3,2,  1,1,1,
+z Eye,          3,2,  1,1,1,
+z Updraft,      1,2,  1,1,1,
+
+@TERRAIN3
+Rocks,      1,2,  0,1,0,   yes, 1, 5, 5,   yes, 1, 5,  3,  Pln, yes,   ; Drt
+Rocks,      1,2,  1,1,0,   yes, 1, 5, 1,   For, 0,15,  0,  Grs, yes,   ; Pln
+Rocks,      1,2,  2,1,0,   yes, 1, 5, 2,   For, 0,10,  0,  Hil, yes,   ; Grs
+Forest,     2,3,  1,2,0,   Pln, 0, 5, 5,   no,  0, 5,  0,  Grs, no,    ; For
+The White Mountain,2,4,1,0,0,yes,1,10, 0,  yes, 3,10,  1,  Pln, yes,   ; Hil
+Mountains,  3,6,  0,2,0,   no,  1,10, 0,   yes, 3,10,  6,  Hil, yes,   ; Mou
+Caves,      1,2,  4,3,0,   yes, 1,10, 1,   no,  0, 0,  0,  Drt, no,    ; Tun
+Hills,      2,2,  0,0,0,   no,  0, 0, 0,   yes, 1,15,  3,  Tun, no,    ; Gla
+Rocks,      2,3,  1,0,0,   Grs, 0,15, 6,   For, 0,15,  0,  Pln, yes,   ; Swa
+Grassland,  3,6,  9,10,5,  no,  1,10, 0,   yes, 3,10,  6,  Hil, no,    ; Jun
+Ocean,      1,2,  1,0,2,   no,  0, 0, 0,   no,  0, 0,  0,  no,  no,    ; Oce
+Oasis,      1,2,  3,1,0,
+Horses,     1,2,  1,3,2,
+Grassland,  1,2,  2,1,0,
+Pheasant,   2,3,  3,2,0,
+Coal,       2,4,  1,2,0,
+Gold,       3,6,  1,3,6,
+Game,       1,2,  3,1,0,
+Ivory,      2,2,  1,1,4,
+Peat,       2,3,  1,4,0,
+Gems,       2,3,  1,1,4,
+Fish,       1,2,  3,0,2,
+Oil,        1,2,  0,4,1,
+Wheat,      1,2,  3,1,1,
+Grassland,  1,2,  2,1,0,
+Silk,       2,3,  3,1,3,
+Wine,       2,4,  3,1,4,
+Iron,       3,6,  1,4,0,
+Furs,       1,2,  2,0,3,
+Oil,        2,2,  0,4,0,
+Spice,      2,3,  3,1,4,
+Fruit,      2,3,  4,1,1,
+Whales,     1,2,  2,2,3,
+
+; Secondary Map Characteristics
+; (modify at your own risk)
+;
+; 0, 1,2, 3,4, 5,6,7,8, D1,M1,F1, D2,M2,F2, D3,M3,F3
+;
+; 0=map type: 1-subsea, 2-subdirt, 3-floating, 4-land dominant, 5-gas giant, 6-std
+; 1=avg blob size (types 3 and 5 only)
+; 2=avg # of blobs (types 3 and 5 only)
+; 3=avg bridge length: 0-no bridges (types 3 and 5 only)
+; 4=avg bridges per blob: 1-4 chance, 0-none (types 3 and 5 only)
+; 5=# blue rooms
+; 6=# ice rooms
+; 7=# fire chambers
+; 8=# storms
+; DMF=desired length, minimum length, frequency
+; specific effects depend on map type
+; for AC game:
+; DMF1=No, No, No
+; DMF2=No, No, No
+; DMF3=No, No, No
+
+@SECONDARY_MAPS
+6, 0,0, 0,0, 0,0,0,0,    0,0,0,  0,0,0,   0,0,0,
+4, 0,0, 0,0, 0,0,0,0,    0,0,0,  0,0,0,   0,0,0,
+6, 0,0, 0,0, 0,0,0,0,    0,0,0,  0,0,0,   0,0,0,
+
+
+@GOVERNMENTS
+Anarchy,        Sir,         Lady
+Despotism,      Master,      Lady
+Monarchy,       Lord,        Queen
+Commune,        Master,      Mistress
+Fanaticism,     Warlord,     Warlord
+Althing,        King,        Lady
+Greatlaw,       High King,   High Queen
+
+;
+;   Leaders
+;
+;   leader, female, color, style, plural, adjective, ...
+;           ...attack, expand, civilize, ...
+;           ...govt, male, female...<repeat>
+;
+;   female:     0 = male           1 = female
+;
+;   color:  Color set (1 - 7)
+;   style:  City style (0 - 3)
+;           0 = Elvish
+;           1 = Buteo
+;           2 = Infidel
+;           3 = Human
+;
+;   attack:     1 = aggressive    -1 = rational
+;   expand:     1 = expansionist  -1 = perfectionist
+;   civilize:   1 = civilized     -1 = militaristic
+;
+;   govt = government type for name replacement (0 = Anarchy, 6 = Democracy)
+;
+;   male, female = titles for leader of government
+;
+@LEADERS
+Gandalf,      Gandalf,             1, 1, 1, Free People, Free People, 1, -1,  0,     2, Master, Lady     
+Sauron,       Sauron,              3, 2, 3, Mordor,      Mordor,      1, -1, -1,     2, Dark Lord, Dark Queen
+Morgoth,      Morgoth,             5, 3, 0, Chaos,       Chaos,       1, -1, -1,     1, Master, Lady     
+Ulfang,       Minalcar,            2, 4, 2, Swarthy Men, Swarthy Men, 1, -1, -1,     2, King, Queen     
+Saruman,      Saruman,             7, 5, 2, Isengard,    Isengard,    1, -1, -1,     2, Lord, Lady	   
+Denethor II,  Denethor II,         4, 6, 2, Gondor,      Gondor,      0, -1, -1,     2, Steward, Stewardess     
+Galadriel,    Galadriel,           6, 7, 2, Elves,       Elves,      -1, -1,  1,     5, King, Lady     
+Gandalf,      Gandalf,             1, 1, 1, Free People, Free People, 1, -1,  0,     2, Master, Lady     
+Sauron,       Sauron,              3, 2, 3, Mordor,      Mordor,      1, -1, -1,     2, Dark Lord, Dark Queen
+Morgoth,      Morgoth,             5, 3, 0, Chaos,       Chaos,       1, -1, -1,     1, Master, Lady     
+Ulfang,       Minalcar,            2, 4, 2, Swarthy Men, Swarthy Men, 1, -1, -1,     2, King, Queen     
+Saruman,      Saruman,             7, 5, 2, Isengard,    Isengard,    1, -1, -1,     2, Lord, Lady	   
+Denethor II,  Denethor II,         4, 6, 2, Gondor,      Gondor,      0, -1, -1,     2, Steward, Stewardess     
+Galadriel,    Galadriel,           6, 7, 2, Elves,       Elves,      -1, -1,  1,     5, King, Lady
+Gandalf,      Gandalf,             1, 1, 1, Free People, Free People, 1, -1,  0,     2, Master, Lady     
+Sauron,       Sauron,              3, 2, 3, Mordor,      Mordor,      1, -1, -1,     2, Dark Lord, Dark Queen
+Morgoth,      Morgoth,             5, 3, 0, Chaos,       Chaos,       1, -1, -1,     1, Master, Lady     
+Ulfang,       Minalcar,            2, 4, 2, Swarthy Men, Swarthy Men, 1, -1, -1,     2, King, Queen     
+Saruman,      Saruman,             7, 5, 2, Isengard,    Isengard,    1, -1, -1,     2, Lord, Lady	   
+Denethor II,  Denethor II,         4, 6, 2, Gondor,      Gondor,      0, -1, -1,     2, Steward, Stewardess     
+Galadriel,    Galadriel,           6, 7, 2, Elves,       Elves,      -1, -1,  1,     5, King, Lady
+
+Saladin,    ...,     0, 5, Arabs,       Arab,        1,  0,  1,     4, Ayatollah, Ayatollah, 2, Sultan, Sultana
+Atawallpa,  ...,     0, 1, Incas,       Inca,       -1,  1,  1,
+
+
+
+;
+;   Trading Commodities
+;
+@CARAVAN
+Hides,
+Wool,
+Beads,
+Cloth,
+Pelts,
+Brocades,
+Copper,
+Dye,
+Silks,
+Ivory,
+Silver,
+Spice,
+Gems,
+Gold,
+Amber,
+Swords,
+
+
+@ORDERS
+Fortify,            F
+Fortified,          F
+Sleep,              S
+Build Fortress,     F
+Build Road,         R
+Build Irrigation,   I
+Build Mine,         m
+Transform,          O
+Clean Corruption,    p
+Build Elevated Platform,      E
+Build Tunnel Entrance,   j
+Go to,              G
+
+
+@DIFFICULTY
+Orc
+Human
+Elf
+Maiar
+Valar
+Eru
+
+@ATTITUDES
+Worshipful
+Enthusiastic
+Cordial
+Receptive
+Neutral
+Uncooperative
+Icy
+Hostile
+Enraged
+
+
+@CIVILIZE2
+0		; AFl
+0		; Alp
+0		; Amp
+0		; Ast
+0		; Ato
+1		; Aut
+0		; Ban
+0		; Bri
+0		; Bro
+0		; Cer
+0		; Che
+4		; Chi
+0		; CoL
+0		; CA
+0		; Cmb
+0		; Cmn
+0		; Cmp
+1		; Csc
+0		; Cst
+0		; Cor
+0		; Cur
+0		; Dem
+0		; Eco
+0		; E1
+1		; E2
+0		; Eng
+0		; Env
+0		; Esp
+0		; Exp
+0		; Feu
+0		; Fli
+0		; Fun
+3		; FP
+0		; Gen
+0		; Gue
+0		; Gun
+6		; Hor
+5		; Ind
+3		; Inv
+2		; Iro
+6		; Lab
+4		; Las
+4		; Ldr
+0		; Lit
+0		; Too
+0		; Mag
+0		; Map
+4		; Mas
+5		; MP
+5		; Mat
+5		; Med
+0		; Met 
+0		; Min
+0		; Mob
+0		; Mon
+0		; MT
+0		; Mys
+0		; Nav
+0		; NF
+0		; NP
+3		; Phi
+1		; Phy
+1		; Pla
+1		; Plu  (Cst & Pot)
+0		; PT
+1		; Pot
+4		; Rad
+0		; RR
+2		; Rec
+2		; Ref
+0		; Rfg
+4		; Rep
+2		; Rob
+0		; Roc
+2		; San
+2		; Sea
+0		; SFl
+2		; Sth
+2		; SE
+2		; Stl
+2		; Sup
+0		; Tac
+2		; The
+2		; ToG
+0		; Tra
+0		; Uni
+2		; War
+3		; Whe
+3		; Wri
+0		; ...
+2		; U1
+0		; U2
+3		; U3
+0		; X1
+5		; X2
+0		; X3
+4		; X4
+6		; X5
+1		; X6
+2		; X7
+
+; Above--Group (0-7) for each advance
+; Below--Codes determine each tribe’s relation to the 8 possible Groups
+; 0= can research, can own, 1=can’t research, can own, 2=can’t research, can’t own
+; Count groups from left to right - 0 1 2 3 4 5 6 7
+
+@LEADERS2
+02220200		;Free People,      
+02012220		;Mordor, 
+02012220		;Chaos,     
+02222000		;Swarthy Men,   
+02002220		;Saruman,   
+02220200		;Gondor,      
+00222220		;Elves,     
+02220200		;Free People,      
+02012220		;Mordor, 
+02012220		;Chaos,     
+02222000		;Swarthy Men,   
+02002220		;Saruman,   
+02220200		;Gondor,      
+00222220		;Elves,     
+02220200		;Free People,      
+02012220		;Mordor, 
+02012220		;Chaos,     
+02222000		;Swarthy Men,   
+02002220		;Saruman,   
+02220200		;Gondor,      
+00222220		;Elves,       
+
+00000000		; Saladin,    
+00000000		; Atawallpa,  
+
+
+; Advanced unit fields
+
+; A) 'tribe may build' mask:		0 - can't; 1 - can
+; bit order from right to left - barbarian, infidel, human, goblin, stygian, merfolk, elvish, buteo
+;
+; B) 'not allowed on map' mask:		1 - not allowed on map
+; bit order from right to left - map 0, map 1, map 2, map 3. The remaining four bits currently aren't used
+;
+; C) minimum bribe amount:			n - minimum bribe; 0 - don't care; -1 - can't bribe
+;
+; D) 'build teleport site' mask:	1: can; 0: can't for each site type
+;Each bit is linked right to left to a map pair listed in @map-transport relationships
+;
+; E) 'use teleport site' mask:		1: can; 0: can't for each site type
+;Each bit is linked right to left to a map pair listed in @map-transport relationships
+;
+; F) native teleport ability:		1: can; 0: can't for each map relationship type
+;Each bit is linked right to left to a map pair listed in @map-transport relationships
+;
+; G) General flags
+;   00000001   invisible except during combat:         1 - invisible
+;   00000010   non-disbandable (human players only):   1 - cannot disband
+;   00000100   0-range-air-unit damage override:       1 - override damage
+;   00001000   barbarian units can't be bought off:    1 - can't buy off
+;   00010000   unit may enter impassable terrain:      1 - may enter
+;   00100000   unit acquires engineering abilities:    1 - engineer
+;   01000000   barbarian unit will not expire:         1 - no expire
+;   10000000   override .SPR file for this unit:       1 - don't use .SPR
+
+;   A         B     C            D                 E               F             G
+
+@UNITS_ADVANCED
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Settlers
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Dwarves 
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Faramir
+01010011, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Pikemen
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Archers
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Knights
+10000001, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Elf pikemen 
+11111111, 11000000, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Saruman 
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Treebeard 
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;The Grond 
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000000  ;Uruk Orcs
+00101101, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000000  ;Snaga Orcs
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11000000  ;Uruk-Hai 
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000000  ;Wolves
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000000  ;Spiders 
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Rohirrim
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Easterlings 
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Haradrim
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Dunedains 
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 11010000  ;Sauron
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Wainriders
+11111111, 11001110, -1,  0000000000000000,0000000000000000,0000000000000000, 10000000  ;Mumakil
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000000  ;Trolls
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Battering Ram
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Elves
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Elven Cavalry
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11000000  ;Olog-Hai
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Rangers
+11111111, 11001010, -1,  0000000000000000,0000000000000000,0000000000001010, 11010000  ;Nazgul
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 10000000  ;High Elves
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000100  ;Dragon 
+11111111, 11001010, -1,  0000000000000000,0000000000000000,0000000000001010, 11010100  ;Flying Dragon
+11111111, 11000000, -1,  0000000000000000,0000000000111111,0000000000000000, 10000000  ;Gimli
+11111111, 11001110, -1,  0000000000000000,0000000000000000,0000000000000000, 10000000  ;Galley
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Eored
+11111111, 00000000, -1,  0000000000000000,0000000011111111,0000000001000000, 11000000  ;White Ship
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Warg Riders
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000000  ;Werewolves
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11000000  ;Great Spider
+11111111, 11001100, -1,  0000000000000000,0000000000110101,0000000000100101, 11000000  ;Watcher
+11111111, 11001110, -1,  0000000000000000,0000000000000000,0000000000000000, 11000000  ;Dromon
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11000000  ;Balrog 
+11111111, 11000000, -1,  0000000000000000,0000000000111111,0000000000000000, 10000011  ;Frodo
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Hobbits
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11001011  ;Undead
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000011  ;The Ring
+11111111, 11000100, -1,  0000000000000000,0000000000000000,0000000000000000, 10000000  ;Great Gate
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 11000001  ;Wormtongue
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Eowyn
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Warlord
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 10000000  ;Gandalf Grey
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Dunlendings
+11111111, 11001010, -1,  0000000000000000,0000000000000000,0000000000001010, 11010000  ;Witch King 
+11111111, 11001010, -1,  0000000000000000,0000000000000000,0000000000001010, 10010000  ;Eagle
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11000000  ;Dark Rider
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Aragorn
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Eomer
+11111111, 11001100, -1,  0000000000000000,0000000000000101,0000000000000000, 10000000  ;Ents
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 10000000  ;Gandalf White
+11111111, 00000000, -1,  0000000000110101,0000000011111111,0000000000000000, 11010000  ;Forces of Aman
+11111111, 11000000, -1,  0000000000000000,0000000000111111,0000000000000000, 10000000  ;Legolas
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Boromir
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 10000000  ;Wizard
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Merry
+11111111, 11000000, -1,  0000000000000000,0000000000111111,0000000000000000, 10000000  ;Elrond
+11111111, 11000000, -1,  0000000000000000,0000000000011111,0000000000000000, 10000000  ;Galadriel
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11000000  ;Shelob
+11111111, 11001010, -1,  0000000000000000,0000000000001010,0000000000001010, 10010000  ;Gwaihir
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Theoden
+11111111, 11000101, -1,  0000000000000000,0000000000110000,0000000000000000, 11000001  ;Nameless Horror
+11111111, 11001010, -1,  0000000000000000,0000000000000000,0000000000001010, 10010000  ;Spy Birds
+11111111, 11000000, -1,  0000000000000000,0000000000111111,0000000000000000, 10000010  ;Tom Bombadil
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Pippin
+11111111, 11000000, -1,  0000000000000000,0000000000111111,0000000000001111, 11010000  ;Sauron's Eye
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 11000000  ;Curunir
+11111111, 11000100, -1,  0000000000000000,0000000000111111,0000000000000000, 10000000  ;Dark Queen
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 10000000  ;Dain II
+11111111, 11000000, -1,  0000000000000000,0000000011111111,0000000000000000, 10000000  ;Cirdan
+11111111, 11000100, -1,  0000000000000000,0000000000110101,0000000000000000, 11001010  ;King
+11111111, 11000000, -1,  0000000000000000,0000000000110101,0000000000001010, 11001010  ;Ancalagon II
+
+@MAP_TRANSPORT_RELATIONSHIPS
+0,1  ; 0/1   Land-Cave
+0,2  ; 1/2   Land-Sky
+1,0  ; 2/3   Cave-Land
+2,0  ; 3/1   Sky-Land
+1,3  ; 4/2   Cave-Underworld
+3,1  ; 5/3   Underworld-Cave
+2,3  ; 6/1   Sky-Aman
+3,2  ; 7/2   Aman-Sky
+
+@INITIAL_SETTINGS
+0,0,4	;Romans
+0,0,4	;Babylonians
+0,0,4	;Germans  
+0,0,4	;Egyptians 
+0,0,4	;Americans  
+0,0,4	;Greeks     
+0,0,4	;Indians  
+0,0,4	;Russians    
+0,0,4	;Zulus       
+0,0,4	;French     
+0,0,4	;Aztecs     
+0,0,4	;Chinese   
+0,0,4	;English    
+0,0,4	;Mongols    
+0,0,4	;Celts      
+0,0,4	;Japanese    
+0,0,4	;Vikings    
+0,0,4	;Spanish     
+0,0,4	;Persians   
+0,0,4	;Carthaginians
+0,0,4	;Sioux      
+
+@SOUNDS
+<none>     ;Human Settlers
+Gimli.wav  ;Dwarves 
+Legolas.wav  ;Faramir
+Infantry.wav  ;Pikemen
+Legolas.wav  ;Archers
+cavalry.wav  ;Knights
+Infantry.wav  ;Elf pikemen 
+Sauron.wav  ;Saruman 
+Tree.wav  ;Treebeard 
+Grond.wav  ;The Grond 
+Orcs.wav   ;Uruk Orcs
+Orcs.wav   ;Snaga Orcs
+Orcs.wav   ;Uruk-Hai 
+Wolves.wav  ;Wolves
+Spider.wav  ;Spiders 
+Eomer.wav  ;Rohirrim
+cavalry.wav  ;Easterlings 
+cavalry.wav  ;Haradrim
+cavalry.wav  ;Dunedains 
+Sauron.wav  ;Sauron
+cavalry.wav  ;Wainriders
+Elephant.wav   ;Mumakil
+Orcs.wav   ;Trolls
+Battering.wav  ;Battering Ram
+Legolas.wav  ;Elves
+ElfRider.wav  ;Elven Cavalry
+Orcs.wav  ;Olog-Hai
+Legolas.wav  ;Rangers
+Nazgul.wav  ;Nazgul
+ElfLord.wav  ;High Elves
+Dragon.wav  ;Dragon 
+Dragon.wav  ;Flying Dragon
+Gimli.wav  ;Gimli
+Navbttle.wav  ;Galley
+Eomer.wav  ;Eored
+Navbttle.wav  ;White ship
+Wolves.wav  ;Warg Riders
+Wolves.wav  ;Werewolves
+Spider.wav  ;Great Spider
+Watcher.wav  ;Watcher
+Navbttle.wav  ;Dromon
+Balrog.wav  ;Balrog 
+Hobbits.wav  ;Frodo
+Hobbits.wav  ;Hobbits
+Undead.wav  ;Undead
+Sauron.wav  ;The Ring
+<none>  ;Great Gate
+<none>  ;Wormtongue
+Eomer.wav  ;Eowyn
+cavalry.wav  ;Warlord
+Gandalf.wav  ;Gandalf Grey
+Infantry.wav  ;Dunlendings
+Sauron.wav  ;Witch King 
+helishot.wav  ;Eagle
+Nazgul.wav  ;Dark Rider
+Aragorn.wav  ;Aragorn
+Eomer.wav  ;Eomer
+Tree.Wav  ;Ents
+Gandalf.wav  ;Gandalf White
+Curunir.wav  ;Forces of Aman
+Legolas.wav  ;Legolas
+Boromir.wav  ;Boromir
+Curunir.wav  ;Wizard
+Hobbits.wav  ;Merry
+Curunir.wav  ;Elrond
+Curunir.wav  ;Galadriel
+Spider.wav  ;Shelob
+helishot.wav  ;Gwaihir
+Theoden.wav  ;Theoden
+Horror.wav  ;Nameless Horror
+helishot.wav ;Spy Birds
+Hobbits.wav  ;Ringbearer
+Hobbits.wav  ;Pippin
+Sauron.wav  ;Sauron's Eye
+Curunir.wav  ;Curunir
+Curunir.wav  ;Dark Queen
+Gimli.wav  ;Dain II
+Theoden.wav  ;Cirdan
+Theoden.wav  ;King
+Dragon2.wav  ;Ancalagon II
+
+@RIVERS
+River,          ; map 1
+River,          ; map 2
+Wind,           ; map 3
+River,          ; map 4
+
+; please do not remove this line
+

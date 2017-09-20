@@ -1,0 +1,21 @@
+@SCENARIO
+@width=550
+@title=%STRING0
+^^Length: %STRING1 to %STRING2
+^It is almost the end of the Third Age - 3018 Gondor Reckoning or 1418 Hobbit 
+Reckoning. It is the beginning of the Great Years.  Sauron's armies have grown 
+tremendous under his rule and all Middle Earth is slowly falling under their might. 
+His servants plunder and corrupt the land and no city is safe from his terror. 
+His nearly indestructible Ringwraiths have shown themselves for the first time in 
+many years. In Mordor he has forged alliances with the Harad peoples in the South and 
+with the Rhun peoples in the East. 
+^Only one obstacle remains between Sauron and the domination of Middle Earth - he needs 
+the One Ring to regain his full power. Already he knows it lies in the hands of a small 
+and rather insignificant hobbit... 
+^The powerful wizard Saruman in Isengard behaves strangely as of late 
+and no one knows whose cause he serves or what are his intentions... 
+^Can the good and uncorrupted people still find allies and muster their 
+strength to stand up against the evil Dark Lord or will they fall as have 
+so many before them?  
+@end -- this line must be here!
+

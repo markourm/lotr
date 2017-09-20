@@ -1,0 +1,88 @@
+FLAGS
+
+0 - The Ring
+
+MORDOR
+
+0 - Sauron in physical form
+1 - Ringbearer killed
+2 - Barad-dur taken
+3 - Witch King killed
+4 - Help from west arrived
+5 - Nazgul(1) killed
+6 - Nazgul(2) killed
+7 - Nazgul(3) killed
+8 - Minas Morgul taken
+9 - Somebody's quest successful
+10 - Mordor successful
+11 - Sauron appearing
+12 - Witch King killed 1th time
+13 - Warlord killed
+
+
+ELVES
+
+1 - The Balrog killed
+2 - Rhun taken
+3 - Galadriel killed
+4 - Cirdan killed
+5 - Radagast killed
+6 - Lorien taken
+7 - White Hills taken
+8 - Grey Havens taken
+9 - Ringbearer killed
+
+
+ISENGARD
+
+1 - Saruman killed
+2 - Isengard taken
+3 - Thranduil taken
+4 - Nenya Ring taken
+5 - Ringbearer killed
+6 - Saruman killed 1th time
+
+
+GONDOR
+
+1 - Fuinur taken
+2 - Fornost taken
+3 - Minas Tirith taken
+4 - Faramir killed
+5 - Edoras taken
+6 - Ringbearer killed
+7 - Gandalf White killed
+8 - Eowyn killed 1th time
+9 - Eomer killed 1th time
+
+
+FREE PEOPLE
+
+1 - Elrond killed
+2 - Rivendell taken
+3 - Dale taken
+4 - Entwood taken
+5 - Hobbiton taken
+6 - Ringbearer killed
+7 - Frodo killed
+
+
+SWARTHY MEN
+
+1 - Dain II killed
+2 - White Ship sank
+3 - Umbar taken
+4 - Rhun taken
+5 - Ringbearer killed
+
+
+CHAOS
+
+1 - Gundabad taken
+2 - Dain II killed
+3 - Bree taken
+4 - Ringbearer killed
+5 - Dragon killed
+
+
+ 

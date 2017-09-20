@@ -1,0 +1,254 @@
+******************** SMEDS LOG *********************
+File Output to: smeds.log
+SMEDS32 Version: 2.0.0        
+
+(    0) 1.1.0  Test of Time  07-Sep-99
+(    0) 
+(    0) Disconnecting from network:
+(    0)    XD_ResetLibrary();
+(   35) Bottom-up orientation recommended.
+(   35) Warning: Sprite not locked in ChangeColor
+(   35) Warning: Sprite not locked in ChangeColor
+(   35) Warning: Sprite not locked in ChangeColor
+(   35) Warning: Port not locked on Sprite Extract
+(   35) Warning: Port not locked on Sprite Extract
+(   35) Warning: Port not locked on Sprite Extract
+(   35) Warning: Port not locked on Sprite Extract
+(   35) Warning: Port not locked on Sprite Extract
+(   35) Warning: Sprite not locked in ChangeColor
+(   35) Warning: Sprite not locked in ChangeColor
+(   35) Failed to open dialog.bmp
+(   35) Failed to open dialog.bmp
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Failed to open dialog.bmp
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Port not locked in CopyToScreen
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort
+(   35) Warning: Source Port not locked in CopyToPort

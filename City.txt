@@ -1,0 +1,228 @@
+;
+;   CIVILIZATION CITY LIST
+;   Copyright (c) 1995 by MicroProse Software
+;
+;   This file can be altered at your own risk to change
+;   the default names for cities.  Keep in mind that
+;   altering the contents of this file may cause your game
+;   to malfunction.
+;
+;   City names may contain no more than 15 characters.
+;
+
+@FREE PEOPLE
+Calembel
+Dor-en-Ernil
+Tumladen
+Firien
+Calenhad
+Minrimmon
+Cormallen
+Nardol
+Eilenach
+Amon Din
+Henneth Annun
+Morthond
+Pinnath Gelin
+Andrast
+Ringlo
+Tolfalas
+Ciril
+Rhosgobel
+Erebor
+Ascar
+Thalos
+Brilthor
+Duilwen
+Adurant
+@STOP
+
+@MORDOR
+Haerast
+Oiomure
+Nevrast
+Galen
+Utumno
+Udun
+Rhovanion
+Redwater
+Wilderland
+Helcar
+Cuivienen
+Illuin
+Greenwood
+Menegroth
+Estolad
+Ramdal
+Andram
+Aelinuial
+Cirith Gorgor
+Nindalf
+Sammath Naur
+Udun
+Angband
+Hithlum
+Wethrin
+Lammoth
+Maedhros
+Onodlo
+Mathedras
+Angrenost
+Enedwaith
+@STOP
+
+@CHAOS
+Hildorien
+Echoriath
+Thoronath
+Cristhorn
+Crissaegrim
+Anach
+Annuminas
+Elostirion
+Weathertop
+Barrowdowns
+Suza
+Norbury
+Dol Baran
+Nan Curunir
+Derndingle
+Onodlo
+Mathedras
+Angrenost
+Enedwaith
+Treegarth
+Tharbad
+@STOP
+
+@SWARTHY MEN
+Alqualonde
+Telpirion
+Laurelin
+Ezollahar
+Varda
+Celebrant
+Limlight
+Caras Galadon
+Ost-in-Edhil
+Cerin Amroth
+Naith
+Lune
+Baranduin
+Emyn Uial
+Evendim
+Teiglin
+Darthir
+Dolmed
+Nogrd
+Athrad
+Talath Rhunen
+Rerir
+Helevorn
+@STOP
+
+@ISENGARD
+Eressea
+Orome
+Hyamentir
+Avathar
+Pelori
+Andunie
+Ondosto
+Sorontil
+Tol Uinen
+Romenna
+Nindamos
+Erendis
+Nisimaldar
+Gelion
+Arossiach
+Dor Dinen
+Iant Iaur
+Dimbar
+Brithiach
+Neldoreth
+@STOP
+
+@GONDOR
+Mahanaxar
+Formenos
+Araman
+Ilmaren
+Calacirian
+Swerting
+Haudh in Gwanur
+Constant
+Southron
+Tolfalas
+Belegaer
+Forostar
+Orrostar
+Hyarrostar
+Hyarnustar
+Andustar
+Mittalmar
+Dolmed
+Nogrd
+Athrad
+Talath Rhunen
+Rerir
+Helevorn
+@STOP
+
+@ELVES
+Lorellin
+Nienna
+Mandos
+Ekkaia
+Aule
+Calacirya
+Tyrn Gorthad
+Gelydh
+Lomin
+Drengist
+Ninniach
+Barad Eithel
+Nen Lalaith
+Angren
+Emyn Muil
+Amon Hen
+Rauros
+Framsburg
+Langflood
+Greylin
+Himling
+Tumhalad
+Eithel Ivrin
+Ginglith
+Nuath
+Tumhalad
+Nenning
+Brithon
+Vinyamar
+Brithombar
+Eglarest
+@STOP
+
+@BARBARIANS
+17
+Huns
+Visigoths
+Ostrogoths
+Sueves
+Angles
+Saxons
+Franks
+Jutes
+Burgundians
+Avars
+Vandals
+Alans
+Bulgars
+Magyars
+Frisians
+Picts
+Langobardi
+
+
+@end
