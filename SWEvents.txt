@@ -2134,7 +2134,7 @@ JUSTONCE
 
 @IF
 UNITKILLED
-unit=Uruk Orcs
+unit=Olog-Hai
 attacker=anybody
 defender=Mordor
 @THEN
