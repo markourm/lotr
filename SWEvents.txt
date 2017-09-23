@@ -2309,7 +2309,7 @@ flag=8
 Who=Gondor
 state=on
 TEXT
-Eowyn the valiant Shieldmaid of Rohan has fallen fighting against a much stronger enemy! She is left on the battlefield for dead, but when the fog clears and the Knights of Gondor return for the wounded, they find her still breathing. She is brought to the healing house of the closest city.
+Eowyn the valiant Shieldmaiden of Rohan has fallen fighting against a much stronger enemy! She is left on the battlefield for dead, but when the fog clears and the Knights of Gondor return for the wounded, they find her still breathing. She is brought to the healing house of the closest city.
 ENDTEXT
 JUSTONCE
 @ENDIF
