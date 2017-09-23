@@ -555,7 +555,7 @@ defender=Mordor
 delay
 delay=10
 TEXT
-Some members of that cursed Fellowship are planning to leave Middle-Earth on Cirdan's White Ships. This will be a challenge for our Corsairs!
+Some members of that cursed Fellowship are planning to leave Middle-Earth on one of Cirdan's White Ships. A call to arms for our Corsairs!
 ENDTEXT
 CREATEUNIT
 unit=White Ship
@@ -636,7 +636,7 @@ attacker=Chaos
 defender=anybody
 @THEN
 TEXT
-Morgoth's slaves have slain Baggins and a greedy dragon has captured the One Ring! Knowing well the true nature of Sauron's former allies it would be foolish to presume that he would hand it back to whom it belongs to... at least not without a fight. We have a chance to retrieve the One Ring for ourselves if we can slay the mighty dragon Ancalagon II.
+Morgoth's slaves have slain Baggins and a greedy dragon has captured the One Ring! Knowing well the true nature of Sauron's former allies it would be foolish to presume that he would hand it back to whom it belongs... at least not without a fight. We have a chance to retrieve the One Ring for ourselves if we can slay the mighty dragon Ancalagon II.
 ENDTEXT
 FLAG
 continuous
@@ -696,7 +696,7 @@ defender=Chaos
 delay
 delay=60
 TEXT
-A colossal red dragon has been seen flying around in the North, terrorizing the smallfolk. We should kill him, loot his lair and convince the smallfolk to give us all their gold for saving their precious children and sheep from that terrible monster!
+A colossal red dragon has been seen flying in the North, terrorizing the smallfolk. We should kill him, loot his lair and convince the smallfolk to give us all their gold for saving their precious children and sheep from that terrible monster!
 ENDTEXT
 FLAG
 continuous
@@ -745,7 +745,7 @@ attacker=Elves
 defender=anybody
 @THEN
 TEXT
-The hideous elves have given in to the temptation of the One Ring! Galadriel's assassins have slain Frodo and the White Lady has become the Dark Queen. Now we need to kill her to get the One Ring for ourselves! At least we have no code of honour and killing a woman is that much easier...
+The hideous elves have given in to the temptation of the One Ring! Galadriel's assassins have slain Frodo and the White Lady has become the Dark Queen. We need to kill her to get the One Ring for ourselves! 
 ENDTEXT
 FLAG
 continuous
@@ -832,7 +832,7 @@ technology=65
 receiver=Elves
 @THEN
 TEXT
-Melian maia has returned to Middle-Earth because of her old friendship with Lady Galadriel, and is going to fight for the Elves!
+Melian maia has returned to Middle-Earth to renew her old friendship with Lady Galadriel and fight for the Elves.
 ENDTEXT
 CREATEUNIT
 unit=Dark Queen
@@ -862,7 +862,7 @@ flag=5
 Who=Swarthy men
 state=on
 TEXT
-Rejoice and celebrate! We have killed Frodo Baggins and the One Ring is ours! Under the banner of the victorious commander and as well the new King of Harad and Rhun, we shall march forth and conquer all Middle-Earth! We must be aware of Sauron, though. He may not like the decision of our new ruler to keep the ring...
+Rejoice and celebrate! We have killed Frodo Baggins and the One Ring is ours! We shall march forth under the banners of the victorious commander and the new King of Harad and Rhun and conquer the whole Middle-Earth! We must be aware of Sauron, though. He may not like the decision of our new ruler to keep the ring...
 ENDTEXT
 CHANGEMONEY
 receiver=Swarthy men
@@ -928,7 +928,7 @@ flag=6
 Who=Gondor
 state=on
 TEXT
-Gondorians have somehow managed to kill Baggins and loot the One Ring! The Ruling Steward who claimed it intends to use it against Sauron and us.
+Gondorians have somehow managed to kill Baggins and loot the One Ring! The Ruling Steward intends to use it against Sauron and us.
 ENDTEXT
 CHANGEMONEY
 receiver=Gondor
@@ -947,7 +947,7 @@ flag=0
 Who=Gondor
 state=on
 TEXT
-Denethor II has fallen under the influence of the One Ring! No longer caring for his noble goals to defend the land and people, the only thing he wants now is power. He crowns himself the King of Gondor and sends out armies to command and conquer all who refuse to swear him fealty! We would do Gondor a great fcavour if we kill the evil usurper and relieve him of his burden.
+Denethor II has fallen under the influence of the One Ring! No longer caring for his noble goals to defend the land and people, the only thing he wants is power. He crowns himself the King of Gondor and sends out armies to command and conquer all who refuse to swear him fealty! We would do Gondor a great favour if we kill the evil usurper and relieve him of his burden.
 ENDTEXT
 CREATEUNIT
 unit=King
@@ -1191,7 +1191,7 @@ flag=0
 Who=Isengard
 state=on
 TEXT
-Saruman has astonished all who have thought him lost by reappearing in Isengard and holding the One Ring! Death to the traitor!
+Saruman has astonished all who have thought him lost by reappearing in Isengard and holding the One Ring! He will not yield it willingly.
 ENDTEXT
 CREATEUNIT
 unit=Curunir
@@ -1258,7 +1258,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-The mines of Moria have been disturbed and an ancient horror within been awakened! Even orcs flee in terror at the sight of the balrog and its burning whips of fire!
+The mines of Moria have been disturbed and an ancient horror within has been awakened! Even orcs flee in terror at the sight of the balrog and its burning whips of fire!
 ENDTEXT
 CREATEUNIT
 unit=Balrog
@@ -1291,7 +1291,7 @@ flag=10
 Who=Mordor
 state=on
 TEXT
-The beautiful Lorien has fallen! Even the combined might of Galadriel and Celeborn was not enough to save the Golden Wood.
+The Golden Wood of Lorien has fallen! The combined might of Galadriel and Celeborn is too weak to stop the onslaught.
 ENDTEXT
 @ENDIF
 
@@ -1320,7 +1320,7 @@ flag=6
 Who=Elves
 state=off
 TEXT
-The Elves liberate Golden Wood! They put great effort in replanting their mallorn-trees, but it will still take centuries to restore Lorien to its former glory.
+The Elves have liberated Golden Wood! They may put great effort in replanting their mallorn-trees, but it will take centuries till they can threaten anyone again.
 ENDTEXT
 @ENDIF
 
@@ -1351,7 +1351,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-The impenetrable Minas Morgul has fallen! Sauron is outraged and sends his Ringwraiths to reclaim it at once!
+The impenetrable Minas Morgul has fallen! Sauron is outraged and sends his Ringwraiths to reclaim it!
 ENDTEXT
 CREATEUNIT
 unit=Nazgul
@@ -1371,7 +1371,7 @@ attacker=anybody
 defender=Elves
 @THEN
 TEXT
-The Ents of Fangorn march forth to join the Elves in fight.
+The Ents of Fangorn march forth to join the Elves in war.
 ENDTEXT
 CREATEUNIT
 unit=Ents
@@ -1395,7 +1395,7 @@ attacker=anybody
 defender=Elves
 @THEN
 TEXT
-The Elves no longer control the White Hills! Dwellers of the eastern lands have been cut off from the Grey Havens and Cirdan sends rangers out of Forlindon to guard the Elves passing westward.
+The Elves no longer control the White Hills. Dwellers of the eastern lands have been cut off from the Grey Havens and Cirdan sends rangers out of Forlindon to guard the Elves passing westward.
 ENDTEXT
 CREATEUNIT
 unit=Rangers
@@ -1419,7 +1419,7 @@ attacker=anybody
 defender=Elves
 @THEN
 TEXT
-The magnificent Grey Havens have been conquered! No more chance for the elves to flee west! If the remaining ships do not reclaim it soon, their fate will be gruesome.
+The magnificent Grey Havens have been conquered! The desperate elves are escaping on galleys.
 ENDTEXT
 CREATEUNIT
 unit=Galley
@@ -1461,7 +1461,7 @@ flag=8
 Who=Elves
 state=off
 TEXT
-With great effort the Elves have liberated the Gray Havens!
+The hapless elves have liberated the Gray Havens.
 ENDTEXT
 @ENDIF
 
@@ -1472,7 +1472,7 @@ attacker=anybody
 defender=Isengard
 @THEN
 TEXT
-Saruman has achieved the impossible and summoned a legion of elves from the very Aman to come and fight for him!
+Saruman has achieved the impossible and summoned a legion of elves from the very Aman to come and fight for him.
 ENDTEXT
 CREATEUNIT
 unit=Forces of Aman
@@ -1570,7 +1570,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Rumours of Boromir's death seem to be exaggerated... At least someone who has the Horn of Gondor and claims to be the elder son of Denethor has been seen in the western regions!
+Rumours of Boromir's death seem to be exaggerated... Someone with an ornate warhorn who claims to be the elder son of Denethor II has been seen in the western regions!
 ENDTEXT
 CREATEUNIT
 unit=Boromir
@@ -1594,7 +1594,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-The residence of the King of Rohan has been sacked and the great Feast Hall of Edoras burnt down! Eoreds ride south seeking refuge and help from their allies in Gondor.
+The residence of the King of Rohan has been sacked and the great Feast Hall of Edoras burnt down. Eoreds ride south seeking refuge from their allies in Gondor.
 ENDTEXT
 CREATEUNIT
 unit=Eored
@@ -1636,7 +1636,7 @@ flag=5
 Who=Gondor
 state=off
 TEXT
-The riders of Rohan have liberated Edoras! The Feast Hall shall be their King's residence again.
+The Riders of Rohan have liberated Edoras! The Feast Hall shall be their King's residence again.
 ENDTEXT
 @ENDIF
 
@@ -1730,7 +1730,7 @@ defender=Free People
 delay
 delay=6
 TEXT
-The dwarves have lost the Lonely Mountain, but they have not lost the war! In the Deep Halls have they forged a dreadful weapon of revenge. Behold the mighty Grond!
+The dwarves have lost the Lonely Mountain, but they will not give up. Down in the Deep Halls they have forged a dreadful weapon of revenge - the mighty Grond.
 ENDTEXT
 CREATEUNIT
 unit=The Grond
@@ -1752,7 +1752,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-The ancient Ents in the Fangorn forest have lost their battle. Reinforcements from the borders hurry as fast as Ents can, but still arrive too late...
+The ancient Ents in the Fangorn forest have lost their battle. Reinforcements from the borders hurry to aid as fast as Ents can and arrive too late...
 ENDTEXT
 CREATEUNIT
 unit=Ents
@@ -1779,7 +1779,7 @@ defender=Free People
 delay
 delay=5
 TEXT
-The undisciplined hobbit slaves are refusing to work and organise an armed rebellion!  
+Hobbits make bad slaves. They are refusing to work and have risen up in armed rebellion!  
 ENDTEXT
 CREATEUNIT
 unit=Hobbits
@@ -1807,10 +1807,11 @@ attacker=anybody
 defender=Swarthy men
 @THEN
 TEXT
-Our legendary Haven of Umbar has fallen to cowardly landlubbers! Now let them see the power of our dark magic! Giant spiders have answered to our call and will drive off the conquerors!
+Our legendary Haven of Umbar has fallen to cowardly landlubbers. Their death shall be painful and giant spiders will feast on their bodies!
 ENDTEXT
 CREATEUNIT
 unit=Great Spider
+count=2
 owner=Swarthy men
 veteran=yes
 homecity=NONE
@@ -1830,7 +1831,7 @@ attacker=anybody
 defender=Swarthy men
 @THEN
 TEXT
-Our prosperous Rhun has fallen, but the war is not lost yet! The reckless invaders have awakened an ancient balrog who is willing to help us fight against them!
+Our prosperous Rhun has fallen, but the war is not lost yet! The reckless invaders have awakened an ancient balrog who is willing to help us fight them!
 ENDTEXT
 CREATEUNIT
 unit=Balrog
@@ -1853,7 +1854,7 @@ attacker=anybody
 defender=Chaos
 @THEN
 TEXT
-Gundabad has been cleansed from the evil taint of former servants of Morgoth! But not without cost... The spirits of two powerful ancient kings are released and manage to escape...
+Gundabad has been taken from the former servants of Morgoth. Such deed will not go unpunished. The spirits of two ancient and powerful kings rise from the graves...
 ENDTEXT
 CREATEUNIT
 unit=Witch King
@@ -1876,7 +1877,7 @@ attacker=anybody
 defender=Chaos
 @THEN
 CREATEUNIT
-unit=Aragorn
+unit=King
 owner=Chaos
 veteran=yes
 homecity=NONE
@@ -1896,7 +1897,7 @@ attacker=anybody
 defender=anybody
 @THEN
 TEXT
-Isengard has fallen! The Elves have recovered the ancient manuscripts that Saruman had hidden in the Orthanc Tower. Now they can learn how to free their Three Rings of Power from the superiority of the One.
+Isengard has fallen. Elves have recovered the ancient manuscripts that Saruman had hidden in the Orthanc Tower. They amass an army and navy while they learn how to free their Three Rings of Power from the superiority of the One.
 ENDTEXT
 CREATEUNIT
 unit=High Elves
@@ -1940,7 +1941,7 @@ attacker=anybody
 defender=anybody
 @THEN
 TEXT
-The village of Bree has fallen! One of the refugees tells that Barrow Wights have been awakened by the former servants of Morgoth. They must be chasing the wizard who, according to old Cardolan texts, wanted to stop the Witch King of Angmar by creating the Curse of Barrow Downs.
+The village of Bree has fallen Refugees say that Barrow Wights have been awakened. They are chasing the wizard, who created the Curse of Barrow Downs to stop the Witch King of Angmar.
 ENDTEXT
 CREATEUNIT
 unit=The Undead
@@ -1966,7 +1967,7 @@ attacker=anybody
 defender=anybody
 @THEN
 TEXT
-The former servants of Morgoth have captured Atastir the Blue Wizard and made him their ally! 
+We have lost Khand. Atastir the Blue Wizard has betrayed us and joined the forces of the former servants of Morgoth.
 ENDTEXT
 CREATEUNIT
 unit=Wizard
@@ -1988,13 +1989,13 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-^^-=THE QUEST 1 of 3=-
+^^-=THE QUEST =-
 ^
-Sauron has not forgotten the arrogant refusal of the Iron Hills dwarves to accept his proposal of alliance and has placed a large bounty on the head of their stubborn King Dain II Ironfoot.
+Sauron has not forgotten the arrogant refusal of the dwarves to accept his offer of alliance. Now he has placed a large bounty on the head of their stubborn King Dain II Ironfoot.
 ^
 ********
 ^
-Now we have the perfect opportunity to earn great treasure and prove our loyalty to Lord Sauron at the same time! We must quickly send our forces north to the Iron Hills and assassinate Dain II before the northern dragons arrive to do the same. 
+We have the perfect opportunity to earn great treasure and prove our loyalty to Lord Sauron! We must quickly send our forces north to the Iron Hills and assassinate Dain II before the northern dragons arrive to do the same. 
 ENDTEXT
 JUSTONCE
 @ENDIF
@@ -2006,13 +2007,13 @@ attacker=Swarthy men
 defender=Free People
 @THEN
 TEXT
-^^-=THE QUEST 2 of 3=-
+^^-=THE QUEST ADVANCES=-
 ^
-We have successfully removed Dain II from the throne of the Iron Hills and Sauron has honestly paid us the reward! But now the former servants of Morgoth are jealous and a horrible sea monster has appeared in Belegaer.
+We have successfully removed Dain II from the throne of the Iron Hills and Sauron has paid us the reward! The former servants of Morgoth are jealous and a horrible sea monster has appeared in Belegaer.
 ^
 ********
 ^
-We need to send out a large fleet and hunt the monster down or it will come to sink our ships and attack our coastal cities.
+We must send out a large fleet and hunt down the creature lest it should attack our coastal cities.
 ENDTEXT
 FLAG
 continuous
@@ -2045,13 +2046,13 @@ attacker=Swarthy men
 defender=Chaos
 @THEN
 TEXT
-^^-=THE QUEST 3 of 3=-
+^^-=THE QUEST ADVANCES=-
 ^
-Brave Corsairs from Umbar have slain the Sea Monster! From its stomach several ancient valuables are found and one inscribed golden plate tells about the fate of two magical swords that were forged by Feanor and ended up in Carn Dum.
+Brave Umbar Corsairs have slain the Sea Monster! Ancient valuables have been found from its belly, including an engraved gold plate that depicts the fate of two magical swords forged by Feanor. They were taken to Carn Dum.
 ^
 ********
 ^
-The swords could still be there. We should send out a search party, "liberate" Carn Dum and search the city thorouhly. 
+The swords could still be there. We must capture Carn Dum and search the city thorouhly. 
 ENDTEXT
 FLAG
 continuous
@@ -2078,12 +2079,10 @@ defender=anybody
 TEXT
 ^^-=THE QUEST COMPLETE=-
 ^
-We have captured Carn Dum and recovered the two famous swords, enchanted with powerful Noldo magic! The two Blue Wizards arrive to claim them.
+We have captured Carn Dum and recovered the two famous swords! Blue Wizards Pallando and Atastir are the only ones who can wield the powerful Noldo magic.
 ENDTEXT
 JUSTONCE
 @ENDIF
-
-;REVISE
 
 @IF
 CITYTAKEN
@@ -2130,6 +2129,50 @@ endlocations
 JUSTONCE
 @ENDIF
 
+@IF
+CHECKFLAG
+Who=Mordor
+flag=4
+state=on
+@AND
+UNITKILLED
+unit=Forces of Aman
+attacker=Swarthy men
+defender=anybody
+@THEN
+TEXT
+^^-= OBJECTIVE =-
+^
+We have captured an elf from Aman. Our Grand Admiral, who is also a skilled torturer, has learned the secrets of building White Ships. We must take our army across the sea and kill the king to stop their onslaught.
+ENDTEXT
+GIVETECHNOLOGY
+receiver=Swarthy men
+technology=63
+CREATEUNIT
+unit=King
+owner=Elves
+veteran=yes
+homecity=NONE
+locations
+2,48,3
+2,44,3
+1,39,3
+endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+UNITKILLED
+unit=King
+attacker=Swarthy men
+defender=Elves
+@THEN
+TEXT
+^^-= VICTORY =-
+^
+We have defeated an Elven King! We have become the greatest power on Middle Earth.
+ENDTEXT
+
 ; HEROES
 
 @IF
@@ -2160,7 +2203,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-The Elves have discovered an ancient complex of caves beneath the Mines of Moria that may hide secrets about how to free their Three Rings of Power from the influence of the One. They are preparing to send an army into the ancient tunnels...
+The elves have discovered an ancient complex of caves beneath the Mines of Moria that may hide secrets about how to free their Three Rings of Power from the influence of the One. They are preparing to send an army into the ancient tunnels...
 ENDTEXT
 CREATEUNIT
 unit=High Elves
@@ -2266,7 +2309,7 @@ flag=8
 Who=Gondor
 state=on
 TEXT
-Eowyn the valiant Shieldmaid of Rohan has fallen fighting against a much stronger enemy! She is left on the battlefield for dead, but when the fog clears and the Knights of Gondor return for the wounded, they find her still breathing. She is brought to the healing house of the closest city.
+Eowyn the valiant Shieldmaiden of Rohan has fallen fighting against a much stronger enemy! She is left on the battlefield for dead, but when the fog clears and the Knights of Gondor return for the wounded, they find her still breathing. She is brought to the healing house of the closest city.
 ENDTEXT
 JUSTONCE
 @ENDIF
@@ -2280,7 +2323,7 @@ defender=Gondor
 delay
 delay=4
 TEXT
-As soon as brave Eowyn has recovered from her wounds, she saddles her horse again and rides out to battle despite all warnings and efforts to keep her safely within the city walls.
+As soon as brave Eowyn has recovered from her wounds, she saddles her horse again and rides out to battle despite all warnings and comrades efforts to keep her safely within the city walls.
 ENDTEXT
 CREATEUNIT
 unit=Eowyn
@@ -2308,7 +2351,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Regardless all her strength and skill, the stalwart Eowyn has fallen fighting against an overwhelming enemy! Gondor and Rohan grieve for her death.
+Regardless all her strength and skill, the stalwart Eowyn has fallen fighting against an overwhelming enemy. Gondor and Rohan grieve for her death.
 ENDTEXT
 @ENDIF
 
@@ -2324,7 +2367,7 @@ flag=9
 Who=Gondor
 state=on
 TEXT
-Courageous Eomer of Rohan has been seriously wounded in the battle for Gondor and returns to his homeland to heal.
+Courageous Eomer of Rohan has been seriously wounded in the battle for Gondor and is taken to his homeland to recover.
 ENDTEXT
 JUSTONCE
 @ENDIF
@@ -2338,7 +2381,7 @@ defender=Gondor
 delay
 delay=4
 TEXT
-Eomer has been healed and returns to the south to fight! 
+Eomer has recovered and returns to fight in the south. 
 ENDTEXT
 CREATEUNIT
 unit=Eomer
@@ -2366,7 +2409,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Commander Eomer has fallen in battle! Rohan has lost their only remaining heir to the throne.
+Commander Eomer has fallen in battle. Rohan has lost their heir to the throne.
 ENDTEXT
 @ENDIF
 
@@ -2382,7 +2425,7 @@ flag=12
 Who=Mordor
 state=on
 TEXT
-The Black Captain of the Nazgul, the fearsome Witch King of Angmar has been injured and forced to retreat to his Master.
+The fearsome Witch King of Angmar, the Black Captain of the Nazgul, has been injured and forced to retreat to his Master.
 ENDTEXT
 CREATEUNIT
 unit=Witch King
@@ -2427,7 +2470,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-The Lieutenant of the Black Tower suffers the same fate as the Witch King did before him. He is slain and his horse stolen.
+The Lieutenant of the Black Tower has met the same fate as the Witch King. He has been slain and his horse stolen.
 ENDTEXT
 CHANGEMONEY
 receiver=Mordor
@@ -2533,7 +2576,7 @@ defender=Free People
 delay
 delay=4
 TEXT
-Aragorn has arrived in Gondor to resist our conquest! 
+Aragorn has gone to Gondor to fight against us. 
 ENDTEXT
 CREATEUNIT
 unit=Aragorn
@@ -2559,7 +2602,7 @@ defender=Free People
 delay
 delay=6
 TEXT
-Aragorn has summoned the Dead Men of Dunharrow to fulfill their oath and fight for Gondor!
+Aragorn has summoned the Dead Men of Dunharrow to fulfill their oath and fight for Gondor.
 ENDTEXT
 CREATEUNIT
 unit=The Undead
@@ -2590,7 +2633,7 @@ defender=Free People
 delay
 delay=3
 TEXT
-Aragorn has recovered from his wounds and is ready to continue his battle against evil! 
+Aragorn has recovered from his wounds and is ready to continue his battle.
 ENDTEXT
 CREATEUNIT
 unit=Aragorn
@@ -2613,7 +2656,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Aragorn has been badly wounded and is dying! Dunedains are at a loss, thinking that Gondor will never see a King of Elros's blood. Sauron takes the chance to convince some of them that he would be much better ally to Arnor than the bastard who is going to claim the throne of Gondor. 
+Aragorn has been badly wounded and is dying. Dunedains are at a loss, thinking that Gondor will never again see a King of Elros's blood. Sauron takes the chance to convince them that he would make a much better ally to Arnor than the bastard who is now going to claim the throne of Gondor. 
 ENDTEXT
 CREATEUNIT
 unit=Dunedain
@@ -2638,7 +2681,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-The Great Gate of Minas Tirith has been breached! 
+The Great Gate of Minas Tirith has been demolished. 
 ENDTEXT
 CREATEUNIT
 unit=Eored
@@ -2681,7 +2724,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-The Wise Gandalf the Grey has been killed! His spirit travels to the West, but only to return shortly with a new body, purified and stronger than ever before. As always, he appears where he is needed most and expected the least... 
+The Wise Gandalf the Grey has been killed. His spirit travels to the West, but only to return shortly with a new body, purified and stronger than ever before. As always, he appears where he is most needed and least expected... 
 ENDTEXT
 CREATEUNIT
 unit=Gandalf the White
@@ -2709,7 +2752,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-The Wise Gandalf the Grey has been killed! His spirit travels to the West, but only to return shortly with a new body, purified and stronger than ever before. As always, he appears where he is needed most and expected the least... 
+The Wise Gandalf the Grey has been killed! His spirit travels to the West, but only to return shortly with a new body, purified and stronger than ever before. As always, he appears where he is most needed and least expected...
 ENDTEXT
 CREATEUNIT
 unit=Gandalf the White
@@ -2732,7 +2775,7 @@ attacker=anybody
 defender=anybody
 @THEN
 TEXT
-The invincible Gandalf the White and his trusted friend Shadowfax have been killed. The Istar's spirit travels West, never to return before the world is mended. When the Great King Manwe learns of the gruesome fate of Middle-Earth, he decides to take action...
+The invincible Gandalf the White and his trusted friend Shadowfax have been killed. The Istars spirit travels West, never to return before the world is mended. When the Great King Manwe learns of the gruesome fate of Middle-Earth, he decides to take action...
 ENDTEXT
 CREATEUNIT
 unit=Forces of Aman
@@ -2772,7 +2815,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-The arrogant Dain II is dead, yet the remaining dwarves are rallying their armies for counterattack.
+The arrogant Dain II is dead and the remaining dwarves are rallying their armies for counterattack.
 ENDTEXT
 CREATEUNIT
 unit=Dwarves
@@ -2794,7 +2837,7 @@ attacker=anybody
 defender=Elves
 @THEN
 TEXT
-Cirdan the Shipwright, the eldest of Eldar and the Captain of White Ships has been defeated in battle and forced to leave Middle-Earth! One of his cunning harbourmasters gathers the leaderless Elves under his banner, but the Havens will never be the same again...
+Cirdan the Shipwright, the eldest of Eldar and the Captain of White Ships has been defeated in battle and forced to leave Middle-Earth. One of his cunning harbourmasters gathers the leaderless Elves under his banner, but the Havens will never be the same again...
 ENDTEXT
 CREATEUNIT
 unit=Wormtongue
@@ -2847,7 +2890,7 @@ attacker=anybody
 defender=Elves
 @THEN
 TEXT
-The nature-loving wizard Radagast the Brown has been killed! He can help Middle-Earth no more, but the Great Eagles near Mirkwood flock together to continue his fight against evil.
+The nature-loving wizard Radagast the Brown has been killed. The Great Eagles near Mirkwood flock together to continue his fight.
 ENDTEXT
 CREATEUNIT
 unit=Great Eagle
@@ -2868,7 +2911,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Fellowship member Legolas is badly wounded and cannot continue on the quest. He returns to his home in Thranduil.
+Fellowship member Legolas is badly wounded and cannot continue the quest. He returns to his home in Thranduil.
 ENDTEXT
 CREATEUNIT
 unit=Legolas
@@ -2888,7 +2931,7 @@ attacker=anybody
 defender=Elves
 @THEN
 TEXT
-Legolas Greenleaf, the son of king Thranduil and celebrated hero of the Elves has met his doom! Overwhelmed by a much stronger enemy he had no chance to survive. His soul travels to the West and from the Halls of Mandos he manages to convince Manwe the Great King of the Valar to send help to the elves of Middle-Earth...
+Legolas Greenleaf, the son of king Thranduil and celebrated hero of the Elves has met his doom. His soul travels to the West and from the Halls of Mandos he manages to convince Manwe the Great King of the Valar to send help to the elves of Middle-Earth...
 ENDTEXT
 CREATEUNIT
 unit=Forces of Aman
@@ -2909,7 +2952,7 @@ defender=Free People
 delay
 delay=4
 TEXT
-In return for saving his life, Gimli the son of Gloin joins the Knights of Gondor to fight against evil! 
+Gimli the son of Gloin appears to be alive and has joined the Knights of Gondor. 
 ENDTEXT
 CREATEUNIT
 unit=Gimli
@@ -2937,7 +2980,7 @@ defender=Free People
 delay
 delay=3
 TEXT
-Legolas has been healed! To reward his rescuers he promises to fight for Gondor! 
+Legolas has been healed! To reward those who saved his life he promises to fight for Gondor! 
 ENDTEXT
 CREATEUNIT
 unit=Legolas
@@ -2989,7 +3032,7 @@ defender=Free People
 delay
 delay=6
 TEXT
-The brave hobbit Pippin finds his way to Gondor where he is promoted to knighthood!  
+The valorous hobbit Pippin finds his way to Gondor where he is promoted to knighthood!  
 ENDTEXT
 CREATEUNIT
 unit=Pippin
@@ -3033,7 +3076,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-Fellowship member Boromir has been mortally wounded and is left on the battlefield for dead. The Horn of Gondor is shattered to pieces.
+Fellowship member Boromir has been mortally wounded and left on the battlefield for dead. The Horn of Gondor is shattered to pieces.
 ENDTEXT
 CHANGEMONEY
 receiver=Gondor
@@ -3052,7 +3095,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-Saruman has found the body of Boromir and resurrects him with the power of the One Ring!
+Saruman has found the body of Boromir and resurrected him with the power of the One Ring!
 ENDTEXT
 CREATEUNIT
 unit=Boromir
@@ -3073,7 +3116,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Courageous Faramir, a hero both brave and wise has met a horrible end in the hands of evil! All Gondor is grieving and Sauron sees it as the best time to bring the fearsome Grond to the gates of Minas Tirith for a little surprise attack!
+Courageous Faramir, a hero both brave and wise has met a horrible end. Gondor is grieving and it is the best time for Sauron to bring the fearsome Grond to the gates of Minas Tirith for a little surprise attack!
 ENDTEXT
 CREATEUNIT
 unit=The Grond
@@ -3094,7 +3137,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-The brave young Hobbit Peregrin Took has fallen fighting for the glory of Gondor!
+The brave young Hobbit Peregrin Took has fallen fighting for the glory of Gondor.
 ENDTEXT
 CHANGEMONEY
 receiver=Mordor
@@ -3108,7 +3151,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-The brave young Hobbit Meriadoc Brandybuck has fallen fighting for the glory of Rohan!
+The brave young Hobbit Meriadoc Brandybuck has fallen fighting for the glory of Rohan.
 ENDTEXT
 CHANGEMONEY
 receiver=Swarthy men
@@ -3122,7 +3165,7 @@ attacker=anybody
 defender=Swarthy men
 @THEN
 TEXT
-One of our Warlords has been killed in battle! Enemies have looted the treasure he carried to support his troops. One of our younger commanders is showing great talent at winning battles and is promoted to the position of Commander-in-Chief.
+Our Warlord has been killed in battle. Enemies have looted his army supplies. A younger commander who has shown great talent at winning battles is promoted to replace him.
 ENDTEXT
 CREATEUNIT
 unit=Warlord
@@ -3148,7 +3191,7 @@ attacker=anybody
 defender=anybody
 @THEN
 TEXT
-The oversized eagle Gwaihir has flown his last flight! His fellow eagles fly from the mountains to kill the slayers.
+The oversized eagle Gwaihir has flown his last flight. His fellow eagles fly down from the mountains to avenge him.
 ENDTEXT
 CREATEUNIT
 unit=Great Eagle
@@ -3194,7 +3237,7 @@ Tom Bombadil has disappeared. Some say he has gone West, others claim to have he
 ENDTEXT
 CHANGEMONEY
 receiver=Free People
-amount=-1000
+amount=-100
 @ENDIF
 
 @IF
@@ -3204,7 +3247,7 @@ attacker=anybody
 defender=anybody
 @THEN
 TEXT
-The fight has gone badly for Treebeard. The servants of evil chop him to pieces and burn them. Saruman takes his chances to convince the ents of Fangorn to follow him as their new glorious leader.
+The fight has gone badly for old Treebeard. He is chopped to pieces and burned. Saruman convinces the ents of Fangorn to accept him as their new glorious leader.
 ENDTEXT
 CREATEUNIT
 unit=Ents
@@ -3226,7 +3269,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-Rumors say that Durin's Bane has been defeated. It is bad for the morale. Inspired by tales of heroes and knowing those beasts can be slain, many young dwarves take the sword to fight openly against Lord Sauron. 
+Rumors say that Durin's Bane has been defeated. Inspired by tales of heroes and knowing those beasts can be slain, many young dwarves take the sword to fight openly against Lord Sauron. 
 ENDTEXT
 CREATEUNIT
 unit=Dwarves
@@ -3249,7 +3292,7 @@ attacker=anybody
 defender=Chaos
 @THEN
 TEXT
-A huge Dragon has been slain by a brave hero! The generous Dragonslayer offers part of the loot to his nation.
+A huge Dragon has been slain by a brave hero. The generous Dragonslayer offers part of the loot to his nation.
 ENDTEXT
 CHANGEMONEY
 receiver=TriggerAttacker
@@ -3263,7 +3306,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-Elrond the Halfelven, one of the few survivors from the First Age has been brutally forced to leave the land of Middle-Earth he loved so much. Rivendell Elves flee to the Grey Havens.
+Elrond the Halfelven, one of the few survivors from the First Age has been brutally forced to leave the land of Middle-Earth he loved so much. Elves leave Rivendell and flee to the Grey Havens.
 ENDTEXT
 CREATEUNIT
 unit=High Elves
@@ -3284,7 +3327,7 @@ attacker=anybody
 defender=Isengard
 @THEN
 TEXT
-Wormtongue has failed and was killed. The King of Rohan is out of Sarumans grasp.
+Wormtongue has failed and has been killed. The King of Rohan is now out of Saruman's grasp.
 ENDTEXT
 CREATEUNIT
 unit=Eored
@@ -3310,7 +3353,7 @@ flag=10
 Who=Mordor
 state=off
 TEXT
-Lord Sauron, the most powerful being on the whole Middle-Earth has lost his life in battle! Our allies in Mordor have been weakened greatly by that loss and we should no longer count on their support.
+Lord Sauron, the most powerful being on the whole Middle-Earth has lost his life in a skirmish. Our allies in Mordor have been weakened greatly by that loss and we should no longer count on their support.
 ENDTEXT
 @ENDIF
 
@@ -3321,7 +3364,7 @@ attacker=anybody
 defender=Gondor
 @THEN
 TEXT
-Theoden the King of Rohan has been defeated in battle and dies under the weight of his mount upon him. News arrive in Gondor from Lower-Anduin where a huge fleet of Umbar dromons, black as the darkest night, have been seen sailing upriver... We hope they learn the truth as late as possible. For those are the ships that we lost to Aragorn and the Undead of Dunharrow... 
+Theoden the King of Rohan has been defeated in battle and has died under the weight of his mount upon him. Gondor is in fear of the huge fleet of dromons, with sails as black as the darkest night, that have been seen sailing upriver from Lower-Anduin... We hope they learn the truth as late as possible... Those are the ships that we lost to Aragorn and the Undead of Dunharrow... 
 ENDTEXT
 CREATEUNIT
 unit=Dromon
@@ -3347,7 +3390,7 @@ defender=Free People
 delay
 delay=1
 TEXT
-After the unfortunate death of Gandalf the glorious King Theoden of Rohan rides out to battle!
+After the unfortunate death of Gandalf, the glorious King Theoden of Rohan rides out to battle.
 ENDTEXT
 CREATEUNIT
 unit=Theoden
@@ -3369,7 +3412,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-Shelob has been slain! Someone must have discovered her secret lair. Sauron has summoned some giant spiders to investigate the situation in Cirith Ungol.
+Shelob has been slain. Someone must have discovered her secret lair. Sauron has summoned giant spiders to investigate the situation in Cirith Ungol.
 ENDTEXT
 CREATEUNIT
 unit=Spiders
@@ -3418,7 +3461,7 @@ flag=4
 state=off
 @THEN
 TEXT
-Unable to watch the carnage any longer the Great Manwe of the Valar seeks Iluvatar's consent and sends his legions to help the Free People!
+Unable to watch the carnage any longer the Great King Manwe of Valinor seeks Iluvatars consent and sends his legions to help the Free People!
 ENDTEXT
 FLAG
 continuous
@@ -3456,7 +3499,7 @@ flag=4
 state=off
 @THEN
 TEXT
-Unable to watch the carnage any longer the great Manwe, king of Valar seeks Iluvatar's consent and sends his legions to save the human states of Gondor and Rohan!
+Unable to watch the carnage any longer the Great King Manwe of Valinor seeks Iluvatars consent and sends his legions to save the human states of Gondor and Rohan!
 ENDTEXT
 FLAG
 continuous
@@ -3493,7 +3536,7 @@ flag=4
 state=off
 @THEN
 TEXT
-Unable to watch the carnage any longer the great Manwe, king of Valar seeks Iluvatar's consent and sends his legions to help the Elves of Middle-Earth!
+Unable to watch the carnage any longer the Great King Manwe of Valinor seeks Iluvatars consent and sends his legions to help the Elves of Middle-Earth!
 ENDTEXT
 FLAG
 continuous
