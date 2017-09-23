@@ -412,7 +412,7 @@ The Ring,     nil, 1,  3.,1, 99a,1d,  1h,1f, 20,0,  1, U2,  001000000000010 ;nuc
 Great Gate,    X7, 0,  0.,0,  0a,15d, 1h,1f, 15,0,  1, Uni, 000000000000000 ;diplomat	
 Wormtongue,   nil, 0,  4.,0,  0a,1d,  4h,1f,  1,0,  6, U2,  000010000001011 ;spy	 
 Eowyn,        nil, 0,  5.,0,  2a,1d,  8h,4f, 40,0,  3, U2,  000010001010010 ;caravan	
-Warlord,      nil, 0,  4.,0,  2a,1d,  6h,4f, 30,0,  3, U2,  000010001000010 ;freight	  
+Warlord,      nil, 0,  4.,0,  2a,1d,  8h,4f, 30,0,  3, U2,  000010001000010 ;freight	  
 Gandalf the Grey,nil,0,4.,0,  2a,1d, 11h,6f, 99,0,  3, U2,  000000001010011 ;explorer 50  
 Wild Men,     nil, 0,  2.,0,  4a,3d,  1h,1f,  4,0,  1, Whe, 000000000000000  
 Witch King,   nil, 1, 12.,2,  2a,1d, 10h,5f, 90,0,  3, U2,  100100000010011 	
