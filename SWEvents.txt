@@ -1995,7 +1995,7 @@ Sauron has not forgotten the arrogant refusal of the dwarves to accept his offer
 ^
 ********
 ^
-We have the perfect opportunity to earn great treasure and prove our loyalty to Lord Sauron! We must quickly send our forces north to the Iron Hills and assassinate Dain II before the northern dragons arrive to do the same. 
+We have the perfect opportunity to earn great treasure and prove our loyalty to Lord Sauron. We must quickly send our forces north to the Iron Hills and assassinate Dain II before the northern dragons arrive to do the same. 
 ENDTEXT
 JUSTONCE
 @ENDIF
