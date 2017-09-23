@@ -555,7 +555,7 @@ defender=Mordor
 delay
 delay=10
 TEXT
-Some members of that cursed Fellowship are planning to leave Middle-Earth on one of Cirdans White Ships. A call to arms for our Corsairs!
+Some members of that cursed Fellowship are planning to leave Middle-Earth on one of Cirdan's White Ships. A call to arms for our Corsairs!
 ENDTEXT
 CREATEUNIT
 unit=White Ship
@@ -2182,7 +2182,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-We have answered to Saurons request to send three legions of Haradrim under his command.
+We have answered to Sauron's request to send three legions of Haradrim under his command.
 ENDTEXT
 CREATEUNIT
 unit=Haradrim
@@ -2203,7 +2203,7 @@ attacker=anybody
 defender=Mordor
 @THEN
 TEXT
-The Elves have discovered an ancient complex of caves beneath the Mines of Moria that may hide secrets about how to free their Three Rings of Power from the influence of the One. They are preparing to send an army into the ancient tunnels...
+The elves have discovered an ancient complex of caves beneath the Mines of Moria that may hide secrets about how to free their Three Rings of Power from the influence of the One. They are preparing to send an army into the ancient tunnels...
 ENDTEXT
 CREATEUNIT
 unit=High Elves
@@ -3327,7 +3327,7 @@ attacker=anybody
 defender=Isengard
 @THEN
 TEXT
-Wormtongue has failed and has been killed. The King of Rohan is now out of Sarumans grasp.
+Wormtongue has failed and has been killed. The King of Rohan is now out of Saruman's grasp.
 ENDTEXT
 CREATEUNIT
 unit=Eored
