@@ -1901,7 +1901,7 @@ Isengard has fallen. Elves have recovered the ancient manuscripts that Saruman h
 ENDTEXT
 CREATEUNIT
 unit=High Elves
-count=50
+count=22
 owner=Elves
 veteran=yes
 homecity=NONE
@@ -1995,7 +1995,7 @@ Sauron has not forgotten the arrogant refusal of the dwarves to accept his offer
 ^
 ********
 ^
-We have the perfect opportunity to earn great treasure and prove our loyalty to Lord Sauron! We must quickly send our forces north to the Iron Hills and assassinate Dain II before the northern dragons arrive to do the same. 
+We have the perfect opportunity to earn great treasure and prove our loyalty to Lord Sauron. We must quickly send our forces north to the Iron Hills and assassinate Dain II before the northern dragons arrive to do the same. 
 ENDTEXT
 JUSTONCE
 @ENDIF
@@ -3252,7 +3252,7 @@ ENDTEXT
 CREATEUNIT
 unit=Ents
 owner=Isengard
-Count=2
+Count=4
 veteran=yes
 homecity=Isengard
 locations
@@ -3331,7 +3331,7 @@ Wormtongue has failed and has been killed. The King of Rohan is now out of Sarum
 ENDTEXT
 CREATEUNIT
 unit=Eored
-Count=25
+Count=15
 owner=Gondor
 veteran=yes
 homecity=none
@@ -3573,7 +3573,7 @@ The treacherous Saruman has gathered a huge army of Uruk-Hai, orcs, wolves and w
 ENDTEXT
 CREATEUNIT
 unit=Uruk Orcs
-count=10
+count=15
 owner=Isengard
 veteran=yes
 homecity=none
@@ -3598,7 +3598,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Trolls
-count=4
+count=8
 owner=Isengard
 veteran=yes
 homecity=none
@@ -3623,7 +3623,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Uruk-Hai
-count=8
+count=12
 owner=Isengard
 veteran=yes
 homecity=none
@@ -3645,7 +3645,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Wolves
-count=6
+count=10
 owner=Isengard
 veteran=yes
 homecity=none
@@ -3667,7 +3667,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Warg Riders
-count=5
+count=8
 owner=Isengard
 veteran=yes
 homecity=none
@@ -3689,7 +3689,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Wild Men
-count=7
+count=10
 owner=Isengard
 veteran=yes
 homecity=none
@@ -3933,7 +3933,7 @@ endlocations
 
 @IF
 RANDOMTURN
-denominator=20
+denominator=30
 @THEN
 CREATEUNIT
 unit=Elven Cavalry
@@ -3973,7 +3973,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Uruk Orcs
-count=4
+count=6
 owner=Mordor
 veteran=yes
 homecity=NONE
@@ -3994,7 +3994,7 @@ state=on
 @THEN
 CREATEUNIT
 unit=Trolls
-count=1
+count=2
 owner=Mordor
 veteran=yes
 homecity=NONE
