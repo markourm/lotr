@@ -24,6 +24,9 @@ turn=-1
 MAKEAGGRESSION
 who=Mordor
 whom=Gondor
+CHANGEMONEY
+receiver=Mordor
+amount=300
 @ENDIF
 
 @IF
@@ -33,6 +36,9 @@ turn=-1
 MAKEAGGRESSION
 who=Mordor
 whom=Elves
+CHANGEMONEY
+receiver=Elves
+amount=300
 @ENDIF
 
 @IF
@@ -42,6 +48,9 @@ turn=-1
 MAKEAGGRESSION
 who=Mordor
 whom=Free People
+CHANGEMONEY
+receiver=Free People
+amount=300
 @ENDIF
 
 @IF
@@ -51,6 +60,9 @@ turn=-1
 MAKEAGGRESSION
 who=Swarthy men
 whom=Free People
+CHANGEMONEY
+receiver=Isengard
+amount=300
 @ENDIF
 
 @IF
@@ -60,6 +72,9 @@ turn=-1
 MAKEAGGRESSION
 who=Chaos
 whom=Free People
+CHANGEMONEY
+receiver=Chaos
+amount=300
 @ENDIF
 
 @IF
@@ -69,6 +84,9 @@ turn=-1
 MAKEAGGRESSION
 who=Swarthy men
 whom=Gondor
+CHANGEMONEY
+receiver=Gondor
+amount=300
 @ENDIF
 
 @IF
@@ -814,26 +832,31 @@ state=on
 
 @IF
 TURN
-turn=110
+turn=100
 @THEN
+TEXT
+Melian maia has returned to Middle-Earth to renew her old friendship with Lady Galadriel and fight for the Elves.
+ENDTEXT
+CREATEUNIT
+unit=High Elves
+count=20
+owner=Elves
+veteran=yes
+homecity=NONE
+Randomize
+locations
+48,44
+86,74
+endlocations
 GIVETECHNOLOGY
 receiver=Elves
 technology=65
 @ENDIF
 
 @IF
-CHECKFLAG
-Who=Elves
-flag=5
-state=on
-@AND
-RECEIVEDTECHNOLOGY
-technology=65
-receiver=Elves
+TURN
+turn=110
 @THEN
-TEXT
-Melian maia has returned to Middle-Earth to renew her old friendship with Lady Galadriel and fight for the Elves.
-ENDTEXT
 CREATEUNIT
 unit=Dark Queen
 owner=Elves
@@ -1900,8 +1923,8 @@ TEXT
 Isengard has fallen. Elves have recovered the ancient manuscripts that Saruman had hidden in the Orthanc Tower. They amass an army and navy while they learn how to free their Three Rings of Power from the superiority of the One.
 ENDTEXT
 CREATEUNIT
-unit=High Elves
-count=22
+unit=Elves
+count=30
 owner=Elves
 veteran=yes
 homecity=NONE
@@ -3310,7 +3333,7 @@ Elrond the Halfelven, one of the few survivors from the First Age has been bruta
 ENDTEXT
 CREATEUNIT
 unit=High Elves
-Count=15
+Count=10
 owner=Elves
 veteran=yes
 homecity=none
