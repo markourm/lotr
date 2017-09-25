@@ -367,8 +367,8 @@ Settlers,     nil, 0,  1.,0,  0a,1d,  1h,1f, 10,0,  5, Map, 000000000000000 ;set
 Dwarves,      nil, 0,  2.,0,  4a,3d,  3h,1f, 12,0,  1, Met, 000000000000010 ;engineers 
 Faramir,      nil, 0,  3.,0,  2a,1d,  9h,5f, 70,0,  3, U2,  000011101000111 ;warriors	
 Pikemen,      nil, 0,  1.,0,  1a,2d,  1h,1f,  1,0,  1, nil, 000010000000000 ;phalanx
-Archers,      nil, 0,  2.,0,  3a,2d,  1h,1f,  3,0,  1, Hor, 010000000000000 ;archers	
-Knights,      nil, 0,  3.,0,  4a,2d,  1h,1f,  5,0,  0, Las, 000000000000010 ;legion
+Archers,      nil, 0,  1.,0,  3a,4d,  1h,2f,  5,0,  1, Hor, 010000000010000 ;archers	
+Knights,      nil, 0,  3.,0,  5a,3d,  1h,1f,  5,0,  0, Las, 000000000000010 ;legion
 Elf Pikemen,  nil, 0,  1.,0,  1a,3d,  2h,1f,  3,0,  1, nil, 000001000000010 ;pikemen	
 Saruman,      nil, 0,  2.,0,  2a,1d, 11h,5f, 60,0,  1, U2,  000010001010011 ;musketeer	
 Treebeard,    nil, 0,  1.,0,  2a,1d, 12h,5f, 99,0,  0, U2,  000010001000010 ;fanatics	
@@ -378,7 +378,7 @@ Snaga Orcs,    X7, 0,  1.,0,  1a,2d,  1h,1f,  1,0,  1, Rec, 000101000000000 ;rif
 Uruk-Hai,     nil, 0,  2.,0,  4a,2d,  2h,1f,  5,0,  0, Wri, 000001000000010 ;marines	
 Wolves,        X7, 0,  3.,0,  4a,2d,  1h,2f,  4,0,  3, Ref, 000100000000010 ;paratrooper	
 Spiders,       X7, 0,  1.,0,  5a,3d,  1h,1f,  4,0,  1, U2,  000001000000010 ;mech inf	
-Rohirrim,     nil, 0,  5.,0,  4a,2d,  1h,1f,  7,0,  0, Rep, 000010000000010 ;horsemen
+Rohirrim,     nil, 0,  5.,0,  6a,2d,  1h,1f,  7,0,  0, Rep, 000010000000010 ;horsemen
 Easterlings,  nil, 0,  5.,0,  3a,2d,  1h,2f,  7,0,  3, MP,  000000000000010 ;chariot	
 Haradrim,     nil, 0,  4.,0,  4a,2d,  1h,2f, 10,0,  0, MP,  000000000000010 ;elephant	
 Dunedain,     nil, 0,  4.,0,  6a,3d,  2h,1f, 12,0,  0, Mas, 000000000000011 ;crusaders
@@ -386,7 +386,7 @@ Sauron,       nil, 0,  5.,0,  3a,2d, 12h,10f,99,0,  0, U2,  100100001010011 ;kni
 Wainriders,   nil, 0,  3.,0,  4a,2d,  2h,2f, 15,0,  0, Mat, 000000000000010 ;dragoons 20	 
 Mumakil,      nil, 0,  3.,0,  5a,3d,  2h,2f, 20,0,  3, Med, 000010000000010 ;cavalry
 Trolls,        X7, 0,  2.,0,  6a,2d,  2h,1f,  7,0,  0, Sea, 000000000000010 ;armor	
-Battering Ram,nil, 0,  2.,0,  3a,1d,  1h,2f,  3,0,  3, Lab, 000100001000000 ;catapult	
+Battering Ram,nil, 0,  2.,0,  4a,1d,  1h,2f,  3,0,  3, Lab, 000100001000000 ;catapult	
 Elves,        nil, 0,  2.,0,  5a,3d,  2h,1f,  9,0,  0, Phy, 000001000000011 ;cannon
 Elven Cavalry,nil, 0,  5.,0,  7a,2d,  2h,1f, 14,0,  3, Pla, 000000000000011 ;artillery
 Olog-Hai,      X7, 0,  2.,0,  8a,3d,  2h,2f, 17,0,  0, Sth, 000000000000010 ;howitzer 	
