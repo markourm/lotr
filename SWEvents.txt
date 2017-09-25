@@ -26,7 +26,7 @@ who=Mordor
 whom=Gondor
 CHANGEMONEY
 receiver=Mordor
-amount=300
+amount=100
 @ENDIF
 
 @IF
@@ -38,7 +38,7 @@ who=Mordor
 whom=Elves
 CHANGEMONEY
 receiver=Elves
-amount=300
+amount=100
 @ENDIF
 
 @IF
@@ -50,7 +50,7 @@ who=Mordor
 whom=Free People
 CHANGEMONEY
 receiver=Free People
-amount=300
+amount=100
 @ENDIF
 
 @IF
@@ -62,7 +62,7 @@ who=Swarthy men
 whom=Free People
 CHANGEMONEY
 receiver=Isengard
-amount=300
+amount=100
 @ENDIF
 
 @IF
@@ -74,7 +74,7 @@ who=Chaos
 whom=Free People
 CHANGEMONEY
 receiver=Chaos
-amount=300
+amount=100
 @ENDIF
 
 @IF
@@ -86,7 +86,7 @@ who=Swarthy men
 whom=Gondor
 CHANGEMONEY
 receiver=Gondor
-amount=300
+amount=100
 @ENDIF
 
 @IF
