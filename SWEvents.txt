@@ -350,7 +350,7 @@ ENDTEXT
 CREATEUNIT
 unit=King
 owner=Free People
-veteran=no
+veteran=yes
 homecity=NONE
 locations
 81,47
@@ -724,10 +724,8 @@ state=on
 @ENDIF
 
 @IF
-CHECKFLAG
-Who=Chaos
-flag=5
-state=on
+TURN
+turn=90
 @AND
 CHECKFLAG
 Who=Chaos
@@ -742,7 +740,7 @@ state=on
 CREATEUNIT
 unit=Ancalagon II
 owner=Chaos
-veteran=no
+veteran=yes
 homecity=NONE
 locations
 92,16,0
@@ -860,7 +858,7 @@ turn=110
 CREATEUNIT
 unit=Dark Queen
 owner=Elves
-veteran=no
+veteran=yes
 homecity=NONE
 locations
 86,74
@@ -1026,7 +1024,7 @@ ENDTEXT
 CREATEUNIT
 unit=King
 owner=Gondor
-veteran=no
+veteran=yes
 homecity=NONE
 locations
 95,119
@@ -1219,12 +1217,13 @@ ENDTEXT
 CREATEUNIT
 unit=Curunir
 owner=Isengard
-veteran=no
+veteran=yes
 homecity=NONE
 locations
 76,92
 74,78
 63,99
+67,77
 endlocations
 JUSTONCE
 @ENDIF
@@ -2724,20 +2723,6 @@ locations
 95,119
 95,115
 endlocations
-@ENDIF
-
-@IF
-UNITKILLED
-unit=King
-attacker=anybody
-defender=Gondor
-@THEN
-TEXT
-King Aragorn Elessar has met a gruesome death in battle. With his head severed from the shoulders his body falls into the mud and horses trample across it. Ravens have his remains and orcs loot his corpse. Such is the final end of the king of Gondor. 
-ENDTEXT
-CHANGEMONEY
-receiver=Gondor
-amount=-2000
 @ENDIF
 
 @IF
