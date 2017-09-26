@@ -368,7 +368,7 @@ attacker=anybody
 defender=Free People
 @THEN
 TEXT
-King Aragorn Elessar is finally dead and his head cut off his shoulders! No more tricks and miraculous recoveries... unless that head finds its way off the spike and attach itself to the rotten body... 
+King Aragorn Elessar is finally dead and his head cut off his shoulders! No more tricks and miraculous recoveries... unless his severed head finds its way off the spike and can attach itself to the rotten body... 
 ENDTEXT
 JUSTONCE
 @ENDIF
@@ -2048,8 +2048,14 @@ unit=Watcher
 owner=Chaos
 veteran=yes
 homecity=NONE
+randomize
 locations
 18,80
+32,146
+27,113
+16,58
+17,23
+46,170
 endlocations
 CHANGEMONEY
 receiver=Swarthy men
@@ -2068,6 +2074,11 @@ unit=Watcher
 attacker=Swarthy men
 defender=Chaos
 @THEN
+FLAG
+continuous
+flag=2
+Who=Swarthy men
+state=on
 TEXT
 ^^-=THE QUEST ADVANCES=-
 ^
@@ -2075,13 +2086,8 @@ Brave Umbar Corsairs have slain the Sea Monster! Ancient valuables have been fou
 ^
 ********
 ^
-The swords could still be there. We must capture Carn Dum and search the city thorouhly. 
+The swords could still be there. We must capture Carn Dum and search the city thoroughly. 
 ENDTEXT
-FLAG
-continuous
-flag=2
-Who=Swarthy men
-state=on
 CHANGEMONEY
 receiver=Swarthy men
 amount=1000
@@ -2094,35 +2100,31 @@ Who=Swarthy men
 flag=2
 state=on
 @AND
-CITYTAKEN
-city=Carn Dum
-attacker=Swarthy men
-defender=anybody
+CHECKFLAG
+Who=Mordor
+flag=9
+state=on
 @THEN
+FLAG
+continuous
+flag=1
+Who=Swarthy men
+state=off
 TEXT
 ^^-=THE QUEST COMPLETE=-
 ^
-We have captured Carn Dum and recovered the two famous swords! Blue Wizards Pallando and Atastir are the only ones who can wield the powerful Noldo magic.
-ENDTEXT
-JUSTONCE
-@ENDIF
-
-@IF
-CITYTAKEN
-city=Carn Dum
-attacker=Swarthy men
-defender=anybody
-@THEN
-TEXT
-Pallando the Blue Wizard has appeared in the south in disguise and seized the throne of Harad.
+We have captured Carn Dum. Pallando and Atastir, the Blue Wizards, have reclaimed the two swords and seized the thrones of Harad and Rhun.
 ENDTEXT
 CREATEUNIT
 unit=Wizard
+count=2
 owner=Swarthy men
 veteran=no
 homecity=NONE
+randomize
 locations
 96,160
+124,84
 endlocations
 JUSTONCE
 @ENDIF
@@ -2138,17 +2140,20 @@ continuous
 flag=9
 Who=Mordor
 state=on
-TEXT
-Atastir the Blue Wizard has appeared in the east in disguise and seized the throne of Rhun.
-ENDTEXT
-CREATEUNIT
-unit=Wizard
-owner=Swarthy men
-veteran=no
-homecity=NONE
-locations
-124,84
-endlocations
+JUSTONCE
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Carn Dum
+attacker=Mordor
+defender=anybody
+@THEN
+FLAG
+continuous
+flag=9
+Who=Mordor
+state=on
 JUSTONCE
 @ENDIF
 
@@ -2834,12 +2839,24 @@ state=on
 @IF
 UNITKILLED
 unit=Dain II
-attacker=anybody
+attacker=Chaos
 defender=Free People
 @THEN
 TEXT
-The arrogant Dain II is dead and the remaining dwarves are rallying their armies for counterattack.
+
+^^-=THE QUEST ADVANCES=-
+^
+The arrogant Dain II is dead and the remaining dwarves are rallying their armies for counterattack. We have lost the bounty on his head. However Sauron has noticed a Chaos creature slowly moving up from the bottomless depths of Belegaer. The Dark Lord has promised to reward us handsomely if we hunt it down.
+^
+********
+^
+We have two months to prepare a fleet till it appears on the surface.
 ENDTEXT
+FLAG
+continuous
+flag=1
+Who=Swarthy men
+state=on
 CREATEUNIT
 unit=Dwarves
 owner=Free People
@@ -3985,6 +4002,31 @@ locations
 131,5
 107,3
 76,2
+endlocations
+@ENDIF
+
+@IF
+CHECKFLAG
+Who=Swarthy men
+flag=1
+state=on
+@AND
+TURNINTERVAL
+interval=10
+@THEN
+CREATEUNIT
+unit=Watcher
+owner=Chaos
+veteran=yes
+homecity=NONE
+randomize
+locations
+18,80
+32,146
+27,113
+16,58
+17,23
+46,170
 endlocations
 @ENDIF
 
