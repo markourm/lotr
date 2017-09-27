@@ -9,9 +9,9 @@ MORDOR
 2 - Barad-dur taken
 3 - Witch King killed
 4 - Help from west arrived
-5 - Nazgul(1) killed
-6 - Nazgul(2) killed
-7 - Nazgul(3) killed
+5 - Dark Rider(1) killed
+6 - Dark Rider(2) killed
+7 - Dark Rider(3) killed
 8 - Minas Morgul taken
 9 - Somebody's quest successful
 10 - Mordor successful
@@ -70,7 +70,7 @@ FREE PEOPLE
 SWARTHY MEN
 
 1 - Dain II killed
-2 - White Ship sank
+2 - Watcher killed
 3 - Umbar taken
 4 - Rhun taken
 5 - Ringbearer killed
