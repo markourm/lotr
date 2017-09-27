@@ -16,6 +16,8 @@ talker=anybody
 talkertype=humanorcomputer
 listener=anybody
 listenertype=humanorcomputer
+@THEN
+@ENDIF
 
 @IF
 TURN
@@ -316,11 +318,11 @@ JUSTONCE
 @IF
 CHECKFLAG
 Who=Mordor
-flag=6
+flag=7
 state=on
 @THEN
 delay
-delay=2
+delay=3
 TEXT
 An old horror emerges from the black castle of Minas Morgul.
 ENDTEXT
@@ -420,7 +422,7 @@ flag=1
 Who=Mordor
 state=on
 TEXT
-Frodo the Ringbearer has been killed and Sauron's minions have retrieved the One Ring! The Dark Lord will now become more powerful than any of Middle'Earth's greatest heroes! 
+Frodo the Ringbearer has been killed and Sauron's minions have retrieved the One Ring! The Dark Lord will now become more powerful than any of Middle'Earth's greatest heroes. 
 ENDTEXT
 CREATEUNIT
 unit=Witch King
@@ -573,7 +575,7 @@ defender=Mordor
 delay
 delay=10
 TEXT
-Some members of that cursed Fellowship are planning to leave Middle-Earth on one of Cirdan's White Ships. A call to arms for our Corsairs!
+Some members of that cursed Fellowship are planning to leave Middle-Earth on Cirdan's White Ships. A call to arms for our Corsairs!
 ENDTEXT
 CREATEUNIT
 unit=White Ship
@@ -2514,9 +2516,6 @@ defender=Mordor
 @THEN
 delay
 delay=3
-TEXT
-A defeated Ringwraith has returned to Barad-dur.
-ENDTEXT
 CREATEUNIT
 unit=Nazgul
 owner=Mordor
@@ -2577,17 +2576,6 @@ flag=7
 Who=Mordor
 state=on
 JUSTONCE
-@ENDIF
-
-@IF
-UNITKILLED
-unit=Nazgul
-attacker=anybody
-defender=anybody
-@THEN
-TEXT
-One of Sauron's undefeatable flying Nazguls has been destroyed with magic. It is no more possible to make him return to the world.
-ENDTEXT
 @ENDIF
 
 @IF
