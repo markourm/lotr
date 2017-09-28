@@ -16,6 +16,8 @@ talker=anybody
 talkertype=humanorcomputer
 listener=anybody
 listenertype=humanorcomputer
+@THEN
+@ENDIF
 
 @IF
 TURN
@@ -316,11 +318,11 @@ JUSTONCE
 @IF
 CHECKFLAG
 Who=Mordor
-flag=6
+flag=7
 state=on
 @THEN
 delay
-delay=2
+delay=3
 TEXT
 An old horror emerges from the black castle of Minas Morgul.
 ENDTEXT
@@ -420,7 +422,7 @@ flag=1
 Who=Mordor
 state=on
 TEXT
-Frodo the Ringbearer has been killed and Sauron's minions have retrieved the One Ring! The Dark Lord will now become more powerful than any of Middle'Earth's greatest heroes! 
+Frodo the Ringbearer has been killed and Sauron's minions have retrieved the One Ring! The Dark Lord will now become more powerful than any of Middle'Earth's greatest heroes. 
 ENDTEXT
 CREATEUNIT
 unit=Witch King
@@ -573,7 +575,7 @@ defender=Mordor
 delay
 delay=10
 TEXT
-Some members of that cursed Fellowship are planning to leave Middle-Earth on one of Cirdan's White Ships. A call to arms for our Corsairs!
+Some members of that cursed Fellowship are planning to leave Middle-Earth on Cirdan's White Ships. A call to arms for our Corsairs!
 ENDTEXT
 CREATEUNIT
 unit=White Ship
@@ -918,6 +920,21 @@ state=off
 MAKEAGGRESSION
 who=Swarthy men
 whom=Isengard
+@ENDIF
+
+@IF
+Checkflag
+Who=Swarthy men
+Mask=0b00000000000000000000000111000000
+Count=3
+State=On
+@THEN
+MAKEAGGRESSION
+who=Swarthy men
+whom=Mordor
+TEXT
+Betrayal most foul has happened. Sauron has turned his back against us!  
+ENDTEXT
 @ENDIF
 
 ;GONDOR 
@@ -1318,6 +1335,19 @@ state=on
 @IF
 CITYTAKEN
 city=Lorien
+attacker=anybody
+defender=Elves
+@THEN
+FLAG
+continuous
+flag=6
+Who=Swarthy men
+state=on
+@ENDIF
+
+@IF
+CITYTAKEN
+city=Lorien
 attacker=Elves
 defender=anybody
 @THEN
@@ -1528,6 +1558,11 @@ defender=Gondor
 TEXT
 The White City of Minas Tirith has fallen! Survivors take refuge in Ered Nimrais and form a band of mercenaries.
 ENDTEXT
+FLAG
+continuous
+flag=8
+Who=Swarthy men
+state=on
 CREATEUNIT
 unit=Rangers
 count=8
@@ -1656,6 +1691,11 @@ defender=Free People
 TEXT
 Rivendell has been conquered! The Last Homely House stands no longer. Surviving elves retreat to the Grey Havens.
 ENDTEXT
+FLAG
+continuous
+flag=7
+Who=Swarthy men
+state=on
 CREATEUNIT
 unit=High Elves
 count=8
@@ -2498,9 +2538,6 @@ defender=Mordor
 @THEN
 delay
 delay=3
-TEXT
-A defeated Ringwraith has returned to Barad-dur.
-ENDTEXT
 CREATEUNIT
 unit=Nazgul
 owner=Mordor
@@ -2561,17 +2598,6 @@ flag=7
 Who=Mordor
 state=on
 JUSTONCE
-@ENDIF
-
-@IF
-UNITKILLED
-unit=Nazgul
-attacker=anybody
-defender=anybody
-@THEN
-TEXT
-One of Sauron's undefeatable flying Nazguls has been destroyed with magic. It is no more possible to make him return to the world.
-ENDTEXT
 @ENDIF
 
 @IF
@@ -3756,8 +3782,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN     
-denominator=4
+TURNINTERVAL
+interval=4
 @AND
 CHECKFLAG
 Who=Mordor
@@ -3816,8 +3842,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN
-denominator=30
+TURNINTERVAL
+interval=27
 @THEN
 CREATEUNIT
 unit=Dunedain
@@ -3834,8 +3860,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN
-denominator=30
+TURNINTERVAL
+interval=33
 @THEN
 CREATEUNIT
 unit=Eored
@@ -3852,8 +3878,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN
-denominator=4
+TURNINTERVAL
+interval=5
 @THEN
 CREATEUNIT
 unit=Rangers
@@ -3875,7 +3901,7 @@ flag=2
 state=on
 @AND
 TURNINTERVAL
-interval=3
+interval=5
 @THEN
 CREATEUNIT
 unit=Great Eagle
@@ -3889,8 +3915,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN
-denominator=30
+TURNINTERVAL
+interval=35
 @THEN
 CREATEUNIT
 unit=Dwarves
@@ -3928,7 +3954,7 @@ flag=5
 state=on
 @AND
 TURNINTERVAL
-interval=10
+interval=9
 @THEN
 CREATEUNIT
 unit=Great Eagle
@@ -3942,8 +3968,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN
-denominator=30
+TURNINTERVAL
+interval=24
 @THEN
 CREATEUNIT
 unit=Elven Cavalry
@@ -3959,8 +3985,8 @@ endlocations
 @ENDIF
 
 @IF
-RANDOMTURN
-denominator=7
+TURNINTERVAL
+interval=7
 @THEN
 CREATEUNIT
 unit=Dragon
