@@ -930,8 +930,8 @@ Count=3
 State=On
 @THEN
 MAKEAGGRESSION
-who=Mordor
-whom=Swarthy men
+who=Swarthy men
+whom=Mordor
 TEXT
 Betrayal most foul has happened. Sauron has turned his back against us!  
 ENDTEXT
