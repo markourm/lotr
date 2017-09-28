@@ -52,8 +52,8 @@ GONDOR
 5 - Edoras taken
 6 - Ringbearer killed
 7 - Gandalf White killed
-8 - Eowyn killed 1th time
-9 - Eomer killed 1th time
+8 - Eowyn killed 1st time
+9 - Eomer killed 1st time
 
 
 FREE PEOPLE
@@ -61,7 +61,7 @@ FREE PEOPLE
 1 - Elrond killed
 2 - Rivendell taken
 3 - Dale taken
-4 - Entwood taken
+4 - Fangorn taken
 5 - Hobbiton taken
 6 - Ringbearer killed
 7 - Frodo killed
@@ -74,6 +74,9 @@ SWARTHY MEN
 3 - Umbar taken
 4 - Rhun taken
 5 - Ringbearer killed
+6 - Elves lost Lorien
+7 - Free people lost Rivendell
+8 - Gondor lost Minas Tirith
 
 
 CHAOS
